@@ -21,10 +21,11 @@ nav a:hover {
     transition: .9s;
 }
 
-#me, #welcomeText {
+#me, #welcomeText #csumb {
     float:left;
 }
 
 footer {
     clear: left;
 }
+
