@@ -14,3 +14,17 @@ nav a {
     text-decoration: none;
     color: white;
 }
+
+nav a:hover {
+    border-bottom:2px orange solid;
+    font-size: 2em;
+    transition: .9s;
+}
+
+#me, #welcomeText {
+    float:left;
+}
+
+footer {
+    clear: left;
+}
