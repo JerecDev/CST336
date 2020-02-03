@@ -17,7 +17,7 @@ footer {
     color: green;
 }
 
-nav a {
+nav a, b {
     padding:15px;
     padding-bottom:4px;
     font-size:  1.8em;
@@ -25,10 +25,14 @@ nav a {
     color: white;
 }
 
-nav a:hover {
+nav a, b:hover {
     border-bottom:2px orange solid;
     font-size: 2em;
     transition: .9s;
+}
+
+nav b {
+    color:DodgerBlue;
 }
 
 #me, #welcomeText #csumb {
