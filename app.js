@@ -31,6 +31,11 @@ app.get('/index', (request, response) => {
     response.render('index');
 });
 
+app.get('/contact', (request, response) => {
+    response.render('contact');
+});
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
