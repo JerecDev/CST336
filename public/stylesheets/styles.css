@@ -25,7 +25,7 @@ nav a, b {
     color: white;
 }
 
-nav a, b:hover {
+nav a:hover {
     border-bottom:2px orange solid;
     font-size: 2em;
     transition: .9s;
