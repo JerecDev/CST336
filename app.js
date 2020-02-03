@@ -27,6 +27,10 @@ app.get('/about', (request, response) => {
     response.render('about');
 });
 
+app.get('/index', (request, response) => {
+    response.render('index');
+});
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
