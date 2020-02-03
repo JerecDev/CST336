@@ -48,6 +48,15 @@ td strong {
     color: orange;
 }
 
+ul {
+    text-align: left;
+    padding-left: 200px;
+}
+
+.hobby {
+    color: yellow;
+}
+
 #table-header {
     background-color: #351a00;
 }
