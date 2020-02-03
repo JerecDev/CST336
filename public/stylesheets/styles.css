@@ -3,13 +3,18 @@ body {
     color:gray;
 }
 
-header, main, nav {
+header, nav {
     text-align: center;
+}
+
+main {
+    text-align: left;
 }
 
 footer {
     text-align:center;
     font-size: .75em;
+    color: green;
 }
 
 nav a {
