@@ -68,7 +68,7 @@ ul {
 }
 
 #me, #welcomeText #csumb {
-    float:none;
+    text-align:center;
 }
 
 footer {

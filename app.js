@@ -32,7 +32,7 @@ app.get('/index', (request, response) => {
 });
 
 app.get('/contact', (request, response) => {
-    response.render('contact');
+    response.render('java');
 });
 
 
