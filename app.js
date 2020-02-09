@@ -23,16 +23,16 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 
-app.get('/java', (request, response) => {
-    response.render('java');
+app.get('/about', (request, response) => {
+    response.render('about');
 });
 
-app.get('/c++', (request, response) => {
-    response.render('c++');
-});
-
-app.get('/home', (request, response) => {
+app.get('/index', (request, response) => {
     response.render('index');
+});
+
+app.get('/contact', (request, response) => {
+    response.render('contact');
 });
 
 
