@@ -1,73 +1,26 @@
 <!DOCTYPE html>
 <html>
-<!--
-First Website
-and comment
-in html
-(comments can span multiple lines)
--->
-
-<!-- This is the head -->
-<!-- All styles and javascript go inside the head -->
     <head>
-        <link href="stylesheets/styles.css" rel="stylesheet" type="text/css" />
+        <title> Guess a Number </title>
+        <meta charset="utf-8" />
+        <script src="https://code.jquery.com/jquery.min.js"></script>
+        
+        <!--Bootstrap files-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        
+        <!--Custom Styles-->
+        <link href="css/styles.css" rel="stylesheet" type="text/css" />
     </head>
-<!-- closing head -->
-
-    <!-- This is the body -->
-    <!-- This is where we place the content of our website -->
     <body>
-        <header>
-            <h1> Programming Languages! </h1>
-        </header>
-        <nav>
-            <hr width="50%" />
-            <b href="/index">Home</b>
-            <a href="/about">C++</a>
-            <a href="/contact">Java</a>
-            <a href="/pascal">Pascal</a>
-        </nav>
+
+        <div class="jumbotron">
+            <h1>Guess a Number</h1>
+        </div>
         
-        <br /><br />
-        
-        <main>
-            <figure id="servers">
-                <img src="images/servers.png" alt="Picture of server farm" />
-            </figure>
-            
-            <div id="servers">
-                <p>For programming, there are many languages to choose from! <br>
-                However, most programmers don't know the advantages to using one over
-                the other.</p>
-                
-                <p>I hope to educate those visiting this website on some of these
-                differences..</p>
-                
-                <p>Please, enjoy!</p>
-                
-                <p>Source: <a href="https://www.online-sciences.com/programming/programming-languages-types-features-advantages-and-disadvantages/">online-sciences.com</a></p>
-                <br /><br />
-            </div>
-        </main>
-        
-        
-        
-        <!-- This is the footer -->
-        <!-- The footer goes inside the body but not always -->
-        <footer>
-            <hr>
-            CST 336 2020&copy; Abbett <br />
-            <strong>Disclaimer:</strong> The information in this webpage is fictitious. <br />
-            It is used for academic purposes only.
-            
-            <figure id="csumb">
-                <img src="images/csumbo.png" width="200" height="100" alt="Picture of CSUMB Otter" />
-            </figure>
-            
-        </footer>
-        <!-- closing footer -->
+        <div id="directions">
+            Guess a number between 1 and 99 in seven attempts!
+        </div>
         
     </body>
-    <!-- closing body -->
-
 </html>

@@ -23,25 +23,6 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 
-app.get('/about', (request, response) => {
-    response.render('c++');
-});
-
-app.get('/index', (request, response) => {
-    response.render('index');
-});
-
-app.get('/contact', (request, response) => {
-    response.render('java');
-});
-
-app.get('/pascal', (request, response) => {
-    response.render('pascal');
-});
-
-
-
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

@@ -1,69 +1,18 @@
-body {
-    background-color:black;
-    color:gray;
-}
-
-header, nav {
-    text-align: center;
-}
-
-main {
-    text-align: left;
-}
-
-footer {
+body{
     text-align:center;
-    font-size: .75em;
-    color: green;
+    background-image: url("../img/numbers_bg.jpg");
+    background-size: cover;
 }
 
-nav a, b {
-    padding:15px;
-    padding-bottom:4px;
-    font-size:  1.8em;
-    text-decoration: none;
-    color: white;
+.jumbotron {
+    background-color:#edf2f9;
 }
 
-nav a:hover {
-    border-bottom:2px orange solid;
-    font-size: 2em;
-    transition: .9s;
+#directions {
+    background-color:#edf2f9;
+    font-size: 2em;    
+    width:900px;
+    height:200px;
+    margin:0 auto;
+    border-radius:20px;
 }
-
-nav b {
-    color:DodgerBlue;
-}
-
-ul {
-    text-align: left;
-    padding-left: 400px;
-    color:white;
-    border: 2px solid white;
-    border-spacing: 30px 10px;
-}
-
-.hobby {
-    color: yellow;
-}
-
-
-#servers, #welcomeText #csumb {
-    text-align:center;
-}
-
-footer {
-    clear: left;
-}
-
-h1 {
-    font-size: 4em;
-    margin-bottom: 0px;
-}
-
-li {
-    border: 3px solid orange;
-    border-spacing: 30px 10px;
-    font-size: 1em;
-}
-
