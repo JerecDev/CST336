@@ -61,6 +61,7 @@ h1 {
 
 li {
     border: 5px solid orange;
+    border-spacing: 30px 10px;
     font-size: 1em;
 }
 
