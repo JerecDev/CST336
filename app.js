@@ -35,6 +35,11 @@ app.get('/contact', (request, response) => {
     response.render('java');
 });
 
+app.get('/pascal', (request, response) => {
+    response.render('pascal');
+});
+
+
 
 
 // catch 404 and forward to error handler
