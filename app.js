@@ -23,7 +23,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 
-app.get('/c++', (request, response) => {
+app.get('/about', (request, response) => {
     response.render('c++');
 });
 
