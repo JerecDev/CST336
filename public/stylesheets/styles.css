@@ -60,6 +60,7 @@ h1 {
 }
 
 li {
+    border: 5px solid orange;
     font-size: 1em;
 }
 
