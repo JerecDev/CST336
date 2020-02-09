@@ -23,8 +23,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 
-app.get('/about', (request, response) => {
-    response.render('about');
+app.get('/c++', (request, response) => {
+    response.render('c++');
 });
 
 app.get('/index', (request, response) => {
