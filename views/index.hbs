@@ -26,11 +26,10 @@
         </div>
         
         <script>
-            var randomNumber = 5 + 6;
-            console.log(randomNumber);
             
-            randomNumber = Math.floor(Math.random() * 99) + 1;
+            var randomNumber = Math.floor(Math.random() * 99) + 1;
             console.log(randomNumber);
+            document.getElementById("numberToGuess").innerHTML = randomNumber;
         </script>
     </body>
 </html>
