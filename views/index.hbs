@@ -67,7 +67,7 @@
                 if (guessCount === 1) {
                     guesses.innerHTML = 'Previous gueses: ';
                     win.innerHTML = 'Wins: ';
-                    win.innerHTML += wins + 'Losses: ' + losses;
+                    win.innerHTML += wins + '  Losses: ' + losses;
                 }
                 if (userGuess > 99) {
                      alert('Numbers within acceptable range only!');
@@ -126,6 +126,7 @@
                 lowOrHi.innerHTML = '';
                 lastResult.innerHTML = '';
                 guesses.innerHTML = '';
+                win.innerHTML = '';
                 
                 lastResult.style.backgroundColor = 'white';
                 
