@@ -1,6 +1,6 @@
 body{
     text-align:center;
-    background-image: url("/public/images/numbers_bg.png");
+    background-image: url('images/numbers_bg.png');
     background-size: cover;
 }
 
