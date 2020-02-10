@@ -60,6 +60,11 @@
                 if (guessCount === 1) {
                     guesses.innerHTML = 'Previous gueses: ';
                 }
+                if (userGuess > 99) {
+                     alert('Numbers within acceptable range only!');
+                     return;
+                }
+                
                 guesses.innerHTML += userGuess + ' ';
                 
                 if (userGuess === randomNumber) {
@@ -78,10 +83,6 @@
                     } else if(userGuess > randomNumber) {
                         lowOrHi.innerHTML = 'Last guess was too high!';
                     }
-                }
-                if (userGuess > 99) {
-                    guesses.innterHTML = 'Number outside of acceptable range, try again.';
-                    guessCount--;
                 }
                 guessCount++;
                 guessField.value = '';
