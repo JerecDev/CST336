@@ -39,7 +39,7 @@
         </div>
         
         <script>
-             var randomNumber = Math.floor(Math.random() * 99) + 1;
+            var randomNumber = Math.floor(Math.random() * 99) + 1;
             var guesses = document.querySelector('#guesses');
             var lastResult = document.querySelector('#lastResult');
             var lowOrHi = document.querySelector('#lowOrHi');
@@ -53,7 +53,7 @@
             resetButton.style.display = 'none';
             
             console.log(randomNumber);
-            document.getElementById("numberToGuess").innerHTML = randomNumber;
+           // document.getElementById("numberToGuess").innerHTML = randomNumber;
             
             function checkGuess() {
                 var userGuess = Number(guessField.value);
