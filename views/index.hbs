@@ -60,11 +60,15 @@
                 if (guessCount === 1) {
                     guesses.innerHTML = 'Previous gueses: ';
                 }
+                if (userGuess > 99) {
+                    lowOrHi.innterHTML = 'Number outside of acceptable range, try again.';
+                    return;
+                }
                 guesses.innerHTML += userGuess + ' ';
                 
                 if (userGuess === randomNumber) {
                     lastResult.innerHTML = 'Congratulations! You got it right!';
-                    lastResult.style.backgroundColor = 'green';
+                    lastResult.style.color = 'green';
                     lowOrHi.innerHTML = '';
                     setGameOver();
                 } else if (guessCount === 7) {
