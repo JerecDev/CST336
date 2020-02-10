@@ -82,6 +82,8 @@
                     lastResult.style.color = 'green';
                     lowOrHi.innerHTML = '';
                     wins++;
+                    win.innerHTML = 'Wins: ';
+                    win.innerHTML += wins + '  Losses: ' + losses;
                     setGameOver();
                 } else if (guessCount === 7) {
                     lastResult.innerHTML = 'Sorry, you lost!';
