@@ -34,27 +34,10 @@
             
         </div>
         
-        <script>
-            
-            var randomNumber = Math.floor(Math.random() * 99) + 1;
-            var guesses = document.querySelector('#guesses');
-            var lastResult = document.querySelector('#lastResult');
-            var lowOrHi = document.querySelector('#lowOrHi');
-            
-            var guessSubmit = document.querySelector('.guessSubmit');
-            var guessField = document.querySelector('.guessField');
-            
-            var guessCount = 1;
-            var resetButton = document.querySelector('#reset');
-            resetButton.style.display = 'none';
-            
-            console.log(randomNumber);
-            document.getElementById("numberToGuess").innerHTML = randomNumber;
-            
-            function checkGuess() {
-                alert('I am a placeholder');
-            }
-            
-        </script>
+        <div id="directions" class="resultParas">
+            Guess a number between 1 and 99 in seven attempts!
+        </div>
+        
+        <script SRC="routes/functions.js"></script>
     </body>
 </html>
