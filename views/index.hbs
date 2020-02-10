@@ -57,7 +57,8 @@
             var guessCount = 1;
             var resetButton = document.querySelector('#reset');
             guessField.focus();
-            resetButton.style.display = 'none';
+
+            $(".resetButton").hide();
             
             console.log(randomNumber);
             
@@ -106,7 +107,7 @@
             function setGameOver() {
                 guessField.disabled = true;
                 guessSubmit.disabled = true;
-                resetButton.style.display = 'inline';
+                $(".box").show();
                 resetButton.addEventListener('click', resetGame);
             }
             
