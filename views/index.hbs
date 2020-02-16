@@ -24,7 +24,8 @@
                         isValid = false;
                         $("#validationFdbk").html("Question 2 was not answered");
                     }
-                    if ($("#q3").val() == "") {
+                    if (!$("#Jefferson").is(":checked") && !$("#Roosevelt").is(":checked")
+                    && !$("#Jackson").is(":checked") && !$("#Franklin").is(":checked")) {
                         isValid = false;
                         $("#validationFdbk").html("Question 3 was not answered");
                     }
