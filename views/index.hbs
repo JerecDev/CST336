@@ -8,12 +8,29 @@
         <script>
             $(document).ready(function(){
                 $("button").on("click", function(){
-                    console.log($("#q1").val());
+                    function isFormValid() {
+                        let isValid = true;
+                        if ($("#q1").val() == "") {
+                            isValid = false;
+                            $("validationFdbk").html("Question 1 was not answered");
+                        }
+                        return isValid;
+                    }
+                    function gradeQuiz() {
+                        $("#validationFdbk").html(""); //resets validation feedback
+                        if(!isFormValid()) {
+                            return;
+                        }
+                    }
                 });//click
             })//ready
         </script>
     </head>
     <body class="text-center">
+        <br><br>
+        <h3 id="validationFdbk" class="bg-danger text-white"></h3>
+        <button class="btn btn-outline-success"> Submit Quiz</button>
+        
         <h1 class="jumbotron"> US Geography Quiz </h1>
         
         <h3>What is the capital of California?</h3>
