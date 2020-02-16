@@ -19,15 +19,18 @@
                     if ($("#q1").val() == "") {
                         isValid = false;
                         $("#validationFdbk").html("Question 1 was not answered");
+                        return isValid;
                     }
                     if ($("#q2").val() == "") {
                         isValid = false;
                         $("#validationFdbk").html("Question 2 was not answered");
+                        return isValid;
                     }
                     if (!$("#Jefferson").is(":checked") && !$("#Roosevelt").is(":checked")
                     && !$("#Jackson").is(":checked") && !$("#Franklin").is(":checked")) {
                         isValid = false;
                         $("#validationFdbk").html("Question 3 was not answered");
+                        return isValid;
                     }
                     return isValid;
                 }
