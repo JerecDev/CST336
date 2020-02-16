@@ -14,7 +14,6 @@
                 //functions
                 function isFormValid() {
                     let isValid = true;
-                    alert($("#q1").val())
                     if ($("#q1").val() == "") {
                         isValid = false;
                         $("#validationFdbk").html("Question 1 was not answered");
@@ -29,6 +28,24 @@
                     if(isFormValid() == false) {
                            return;
                     }
+                    
+                    //variables
+                    let score = 0;
+                    let q1Response = $("#q1").val().toLowerCase();
+                    
+                    //Question 1
+                    if(q1Response == "sacramento") {
+                        $("#q1Feedback").html("Correct!");
+                        $("#q1Feedback").attr("class", "bg-success text-white");
+                        $("#markImg1").html("<img src = 'images/checkmark.png' alt='checkmark'>");
+                        score += 20;
+                    }else {
+                        $("#q1Feedback").html("Incorrect!");
+                        $("#q1Feedback").attr("class", "bg-warning text-white");
+                        $("#totalScore").html(`Total Score: ${score}`);
+                    }
+                    
+                    $("#totalScore").html(`Total Score: ${score}`);
                 }
             })//ready
         </script>
@@ -37,11 +54,15 @@
         
         <h1 class="jumbotron"> US Geography Quiz </h1>
         
-        <h3>What is the capital of California?</h3>
+        <h3><span id"markImg1"></span>What is the capital of California?</h3>
         <input type="text" id="q1">
+        <br><br>
+        <div id="q1Feedback"></div>
         <br><br>
         <h3 id="validationFdbk" class="bg-danger text-white"></h3>
         <button class="btn btn-outline-success"> Submit Quiz</button>
+        <br>
+        <h2 id="totalScore" class="text-info"></h2>
         
     </body>
 </html>
