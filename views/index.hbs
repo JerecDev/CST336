@@ -13,6 +13,7 @@
                 
                 //functions
                 function isFormValid() {
+                    alert($("#q1").val())
                     let isValid = true;
                     if ($("#q1").val() == "") {
                         isValid = false;
@@ -23,7 +24,6 @@
                 
                 function gradeQuiz() {
                     
-                    alert($("#q1").val())
                     $("#validationFdbk").html(""); //resets validation feedback
                     
                     if(!isFormValid) {
