@@ -14,6 +14,7 @@
                 //functions
                 function isFormValid() {
                     let isValid = true;
+                    $("validationFdbk").html("Question 1 was not answered");
                     if ($("#q1").val() == "") {
                         isValid = false;
                         $("validationFdbk").html("Question 1 was not answered");
