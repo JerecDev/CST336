@@ -13,7 +13,20 @@
                 //event Listeners
                 $("button").on("click", gradeQuiz);
                 
+                
                 //functions
+                
+                function displayQ4Choices(){
+                    
+                    let q4ChoicesArray = ["Maine", "Rhode Island", "Maryland", "Delaware"];
+                    
+                    for (let i = 0; i < q4ChoicesArray.length; i++) {
+                        $("q4Choices").append(` <input type="radio" name="q4" id="${q4ChoicesArray[i]}"
+                        value ="${q4ChoicesArray[i]}"> <label for="${q4ChoicesArray[i]}"> ${
+                            q4ChoicesArray[i]}</label>`);
+                        }
+                    }
+                
                 function isFormValid() {
                     let isValid = true;
                     if ($("#q1").val() == "") {
@@ -127,13 +140,7 @@
         <br>
         
         <h3><span id="markImg4"></span> What is the smallest US State?</h3>
-        <input type="radio" name="q4" id="me" value="Maine"> <label for"me">Maine </label>
-        <input type="radio" name="q4" id="ri" value="Rhode Island"> <label for"ri">Rhode 
-        Island </label>
-        <input type="radio" name="q4" id="md" value="Maryland"> <label for"md">Maryland 
-        </label>
-        <input type="radio" name="q4" id="de" value="Delaware"> <label for"de">Delaware 
-        </label>
+        <div id="q4Choices"></div>
         <div id="q4Feedback"></div>
         <br></br>
         
