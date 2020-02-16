@@ -32,6 +32,7 @@
                     //variables
                     let score = 0;
                     let q1Response = $("#q1").val().toLowerCase();
+                    let q2Response = $("#q2").val();
                     
                     //Question 1
                     if(q1Response == "sacramento") {
@@ -42,7 +43,18 @@
                     }else {
                         $("#q1Feedback").html("Incorrect!");
                         $("#q1Feedback").attr("class", "bg-warning text-white");
-                        $("#totalScore").html(`Total Score: ${score}`);
+                        $("#markImg1").html("<img src = 'images/xmark.png alt='xmark'>")
+                    }
+                    
+                    if(q2Response == "mo") {
+                        $("#q2Feedback").html("Correct!");
+                        $("#q2Feedback").attr("class", "bg-success text-white");
+                        $("#markImg2").html("<img src = 'images/checkmark.png' alt='checkmark'>");
+                        score += 20;
+                    }else {
+                        $("#q2Feedback").html("Incorrect!");
+                        $("#q2Feedback").attr("class", "bg-warning text-white");
+                        $("#markImg2").html("<img src = 'images/xmark.png alt='xmark'>")
                     }
                     
                     $("#totalScore").html(`Total Score: ${score}`);
@@ -58,7 +70,19 @@
         <input type="text" id="q1">
         <br><br>
         <div id="q1Feedback"></div>
+        <br>
+        
+        <h3><span id"markImg2"></span>Wjat os the longest river?</h3>
+        <select id="q2">
+            <option value="">Select One</option>
+            <option value="ms">Mississippi</option>
+            <option value="mo">Missouri</option>
+            <option value="de">Delaware</option>
+        </select>
         <br><br>
+        <div id="q2Feedback"></div>
+        <br>
+        
         <h3 id="validationFdbk" class="bg-danger text-white"></h3>
         <button class="btn btn-outline-success"> Submit Quiz</button>
         <br>
