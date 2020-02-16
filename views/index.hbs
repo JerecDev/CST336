@@ -15,7 +15,6 @@
                 function isFormValid() {
                     let isValid = true;
                     alert($("#q1").val())
-                    //$(#"validationFdbk").html("Question 1 was not answered");
                     if ($("#q1").val() == "") {
                         isValid = false;
                         $("#validationFdbk").html("Question 1 was not answered");
@@ -41,7 +40,7 @@
         <h3>What is the capital of California?</h3>
         <input type="text" id="q1">
         <br><br>
-        <h3 id="validationFdbk" class="bg-danger text-white"> Pie !</h3>
+        <h3 id="validationFdbk" class="bg-danger text-white"></h3>
         <button class="btn btn-outline-success"> Submit Quiz</button>
         
     </body>
