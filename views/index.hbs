@@ -8,6 +8,8 @@
         <script>
             $(document).ready(function(){
                 
+                var score = 0;
+                
                 //event Listeners
                 $("button").on("click", gradeQuiz);
                 
@@ -29,32 +31,34 @@
                            return;
                     }
                     
+                    function rightAnswer(index) {
+                        $(`#q${index}Feedback`).html("Correct!");
+                        $(`#q${index}Feedback`).attr("class", "bg-success text-white");
+                        $(`#markImg${index}`).html("<img src ='images/checkmark.png'>");
+                        score += 20;
+                    }
+                    
+                    function wrongAnswer(index) {
+                        $(`#q${index}Feedback`).html("Incorrect!");
+                        $(`#q${index}Feedback`).attr("class", "bg-warning text-white");
+                        $(`#markImg${index}`).html("<img src ='images/xmark.png' alt='xmark'>")
+                    }
+                    
                     //variables
-                    let score = 0;
                     let q1Response = $("#q1").val().toLowerCase();
                     let q2Response = $("#q2").val();
                     
                     //Question 1
                     if(q1Response == "sacramento") {
-                        $("#q1Feedback").html("Correct!");
-                        $("#q1Feedback").attr("class", "bg-success text-white");
-                        $("#markImg1").html("<img src = 'images/checkmark.png' alt='checkmark'>");
-                        score += 20;
+                        rightAnswer(1);
                     }else {
-                        $("#q1Feedback").html("Incorrect!");
-                        $("#q1Feedback").attr("class", "bg-warning text-white");
-                        $("#markImg1").html("<img src = 'images/xmark.png' alt='xmark'>")
+                        wrongAnswer(1);
                     }
-                    
+                    //Question 2
                     if(q2Response == "mo") {
-                        $("#q2Feedback").html("Correct!");
-                        $("#q2Feedback").attr("class", "bg-success text-white");
-                        $("#markImg2").html("<img src = 'images/checkmark.png' alt='checkmark'>");
-                        score += 20;
+                        rightAnswer(2);
                     }else {
-                        $("#q2Feedback").html("Incorrect!");
-                        $("#q2Feedback").attr("class", "bg-warning text-white");
-                        $("#markImg2").html("<img src = 'images/xmark.png' alt='xmark'>")
+                        wrongAnswer(2);
                     }
                     
                     $("#totalScore").html(`Total Score: ${score}`);
