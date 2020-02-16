@@ -7,22 +7,28 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script>
             $(document).ready(function(){
-                $("button").on("click", function(){
-                    function isFormValid() {
-                        let isValid = true;
-                        if ($("#q1").val() == "") {
-                            isValid = false;
-                            $("validationFdbk").html("Question 1 was not answered");
-                        }
-                        return isValid;
+                
+                //even Listeners
+                $("button").on("click", gradeQuiz)
+                
+                //functions
+                function isFormValid() {
+                    let isValid = true;
+                    if ($("#q1").val() == "") {
+                        isValid = false;
+                        $("validationFdbk").html("Question 1 was not answered");
                     }
-                    function gradeQuiz() {
-                        $("#validationFdbk").html(""); //resets validation feedback
-                        if(!isFormValid()) {
-                            return;
-                        }
+                    return isValid;
+                }
+                
+                function gradeQuiz() {
+                    
+                    $("#validationFdbk").html(""); //resets validation feedback
+                    
+                    if(!isFormValid()) {
+                           return;
                     }
-                });//click
+                }
             })//ready
         </script>
     </head>
