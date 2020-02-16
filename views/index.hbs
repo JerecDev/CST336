@@ -20,6 +20,14 @@
                         isValid = false;
                         $("#validationFdbk").html("Question 1 was not answered");
                     }
+                    if ($("#q2").val() == "") {
+                        isValid = false;
+                        $("#validationFdbk").html("Question 2 was not answered");
+                    }
+                    if ($("#q3").val() == "") {
+                        isValid = false;
+                        $("#validationFdbk").html("Question 3 was not answered");
+                    }
                     return isValid;
                 }
                 
