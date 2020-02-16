@@ -32,10 +32,10 @@
                         $("#validationFdbk").html("Question 3 was not answered");
                         return isValid;
                     }
-                    if(q4Response == "Rhode Island") {
-                        rightAnswer(4);
-                    }else {
-                        wrongAnswer(4);
+                    if ($("#q4").val() == "") {
+                        isValid = false;
+                        $("#validationFdbk").html("Question 4 was not answered");
+                        return isValid;
                     }
                     return isValid;
                 }
@@ -85,6 +85,12 @@
                         rightAnswer(3);
                     } else {
                         wrongAnswer(3);
+                    }
+                    //Question 4
+                    if(q4Response == "Rhode Island") {
+                        rightAnswer(4);
+                    } else {
+                        wrongAnswer(4);
                     }
                     
                     $("#totalScore").html(`Total Score: ${score}`);
