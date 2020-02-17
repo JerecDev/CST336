@@ -11,7 +11,7 @@
                 
                 //Globals
                 var score = 0;
-                var attempts = 0;
+                var attempts = localStorage.getItem("total_attempts");
                 
                 //event Listeners
                 $("button").on("click", gradeQuiz);
@@ -122,6 +122,8 @@
                     
                     $("#totalScore").html(`Total Score: ${score}`);
                     $("#totalAttempts").html(`Total Attempts: ${++attempts}`);
+                    localStorage.setItem("total_attempts", attempts);
+                    
                 }
             })//ready
         </script>
