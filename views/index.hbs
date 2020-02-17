@@ -123,7 +123,11 @@
                     $("#totalScore").html(`Total Score: ${score}`);
                     $("#totalAttempts").html(`Total Attempts: ${++attempts}`);
                     localStorage.setItem("total_attempts", attempts);
+                    $("#totalScore").css("background-color") == "rgb(255, 0, 0)";
                     
+                    if (score == 100) {
+                        
+                    }
                 }
             })//ready
         </script>
@@ -175,6 +179,8 @@
         <button class="btn btn-outline-success"> Submit Quiz</button>
         <br>
         <h2 id="totalScore" class="text-info"></h2>
+        <br>
+        <h3 id="congrats"></h3>
         <br>
         <h3 id="totalAttempts"></h3>
         
