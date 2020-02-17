@@ -123,10 +123,11 @@
                     $("#totalScore").html(`Total Score: ${score}`);
                     $("#totalAttempts").html(`Total Attempts: ${++attempts}`);
                     localStorage.setItem("total_attempts", attempts);
-                    $("#totalScore").css("color") == "rgb(255, 0, 0)";
+                    $("#totalScore").css('color', 'red');
                     
                     if (score >= 100) {
-                        
+                        $("#congrats").html(`Congratulations!`);
+                        $("#totalScore").css('color', 'green');
                     }
                 }
             })//ready
