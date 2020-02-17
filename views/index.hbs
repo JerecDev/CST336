@@ -9,7 +9,9 @@
         <script>
             $(document).ready(function(){
                 
+                //Globals
                 var score = 0;
+                var attempts = 0;
                 
                 //event Listeners
                 $("button").on("click", gradeQuiz);
@@ -119,6 +121,7 @@
                     }
                     
                     $("#totalScore").html(`Total Score: ${score}`);
+                    $("#totalAttempts").html(`Total Attempts: ${++attempts}`);
                 }
             })//ready
         </script>
@@ -170,6 +173,8 @@
         <button class="btn btn-outline-success"> Submit Quiz</button>
         <br>
         <h2 id="totalScore" class="text-info"></h2>
+        <br>
+        <h3 id="totalAttempts"></h3>
         
     </body>
 </html>
