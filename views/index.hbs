@@ -2,6 +2,7 @@
 <html>
     <head>
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src = "https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js" ></script> 
         <meta charset="utf-8">
         <title>US Quiz</title>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -20,9 +21,10 @@
                 function displayQ4Choices(){
                     
                     let q4ChoicesArray = ["Maine", "Rhode Island", "Maryland", "Delaware"];
+                    q4ChoicesArray = _.shuffle(q4ChoicesArray);
                     
                     for (let i = 0; i < q4ChoicesArray.length; i++) {
-$("#q4Choices").append(` <input type="radio" name="q4" id="${q4ChoicesArray[i]}" value="${q4ChoicesArray[i]}"> <label for="${q4ChoicesArray[i]}"> ${q4ChoicesArray[i]}</label>`);
+                            $("#q4Choices").append(` <input type="radio" name="q4" id="${q4ChoicesArray[i]}" value="${q4ChoicesArray[i]}"> <label for="${q4ChoicesArray[i]}"> ${q4ChoicesArray[i]}</label>`);
                         }
                     }
                 
