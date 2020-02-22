@@ -49,14 +49,18 @@
 
                     let q1Response = $("#q1").val().toLowerCase();
                     
-                    //Question 1
-                    if(q1Response != "") {
-                        $("#slot1").fadeOut();
-                        $('#slot1').attr('src', 'images/bar.png');
-                        $("#slot1").delay(200).fadeIn();
-                        $("#slot2").attr('src', 'images/bar.png');
-                        $("#slot3").attr('src', 'images/bar.png');
-                    }
+                    //Slot 1
+                    $("#slot1").fadeOut();
+                    $('#slot1').attr('src', 'images/bar.png');
+                    $("#slot1").delay(200).fadeIn();
+                    //Slot 2
+                    $("#slot2").fadeOut();
+                    $("#slot2").attr('src', 'images/bar.png');
+                    $("#slot2").delay(200).fadeIn();
+                    //Slot 3
+                    $("#slot3").fadeOut();
+                    $("#slot3").attr('src', 'images/bar.png');
+                    $("#slot3").delay(200).fadeIn();
                     
                     $("#totalScore").html(`Total Points: ${score}`);
                     
