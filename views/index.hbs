@@ -51,9 +51,11 @@
                     
                     //Question 1
                     if(q1Response != "") {
-                        $("#slot1").html("<img src ='images/bar.png'>");
-                        $("#slot2").html("<img src ='images/bar.png'>");
-                        $("#slot3").html("<img src ='images/bar.png'>");
+                        $("#slot1").fadeOut();
+                        $('#slot1').attr('src', 'images/bar.png');
+                        $("#slot1").delay(200).fadeIn();
+                        $("#slot2").attr('src', 'images/bar.png');
+                        $("#slot3").attr('src', 'images/bar.png');
                     }
                     
                     $("#totalScore").html(`Total Points: ${score}`);
@@ -71,9 +73,9 @@
         <button class="btn btn-outline-success"> Spin!</button>
         <br></br>
         
-        <img src="images/7.png" alt="7" class="slot1" id="slot1">
-        <img src="images/7.png" alt="7" class="slot2" id="slot2">
-        <img src="images/7.png" alt="7" class="slot3" id="slot3">
+        <img src="images/7.png" alt="7" class="slots" id="slot1">
+        <img src="images/7.png" alt="7" class="slots" id="slot2">
+        <img src="images/7.png" alt="7" class="slots" id="slot3">
         <br></br>
         
         <h2 id="totalScore" class="text-info"></h2>
