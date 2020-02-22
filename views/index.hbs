@@ -12,42 +12,23 @@
                 
                 //Globals
                 var score = 10;
-                var attempts = localStorage.getItem("total_attempts");
                 
                 //event Listeners
-                $("button").on("click", gradeQuiz);
-                
-                //Question 5 images
-                $(".q5Choice").on("click", function() {
-                    $(".q5Choice").css("background","");
-                    $(this).css("background", "rgb(255, 255, 0)");
-                });
-                displayQ4Choices();
+                $("button").on("click", spinMachine);
                 
                 //functions
                 
-                function displayQ4Choices(){
+                function spinMachine() {
                     
-                    let q4ChoicesArray = ["Maine", "Rhode Island", "Maryland", "Delaware"];
-                    q4ChoicesArray = _.shuffle(q4ChoicesArray);
                     
-                    for (let i = 0; i < q4ChoicesArray.length; i++) {
-                            $("#q4Choices").append(` <input type="radio" name="q4" id="${q4ChoicesArray[i]}" value="${q4ChoicesArray[i]}"> <label for="${q4ChoicesArray[i]}"> ${q4ChoicesArray[i]}</label>`);
-                        }
-                    }
-                
-                
-                function gradeQuiz() {
                     
-                    function rightAnswer(index) {
-                        $(`#q${index}Feedback`).html("Correct!");
-                        $(`#q${index}Feedback`).attr("class", "bg-success text-white");
-                        $(`#markImg${index}`).html("<img src ='images/checkmark.png'>");
-                        score += 20;
-                    }
+                    setInterval(function() {
+                      var ranNum = 1 + Math.floor(Math.random() * 3);
+                    $("#totalScore").html(`Total Points: ${ranNum}`);
+                    },
+                    1000);
                     
-
-                    let q1Response = $("#q1").val().toLowerCase();
+                    
                     
                     //Slot 1
                     $("#slot1").fadeOut('fast', function() {
@@ -64,6 +45,8 @@
                     $('#slot3').attr('src', 'images/bar.png');
                     $("#slot3").delay(200).fadeIn();
                     });
+                    
+                    
                     
                     $("#totalScore").html(`Total Points: ${score}`);
                     
