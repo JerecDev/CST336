@@ -20,12 +20,8 @@
                 
                 function spinMachine() {
                     
-                    
-                    
                     var ranNum = 1 + Math.floor(Math.random() * 3);
-                    
-                    
-                    
+              
                     //Slot 1
                     $("#slot1").fadeOut('fast', function() {
                     $('#slot1').attr('src', 'images/bar.png');
@@ -41,11 +37,8 @@
                     $('#slot3').attr('src', 'images/bar.png');
                     $("#slot3").delay(200).fadeIn();
                     });
-                    
-                    
-                    
+                
                     $("#totalScore").html(`Total Points: ${ranNum}`);
-                    $("#totalScore").html(`Total Points: ${score}`);
                     
                 }
             })//ready
