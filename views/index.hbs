@@ -24,7 +24,6 @@
                     
                     setInterval(function() {
                       var ranNum = 1 + Math.floor(Math.random() * 3);
-                    $("#totalScore").html(`Total Points: ${ranNum}`);
                     },
                     1000);
                     
@@ -47,8 +46,7 @@
                     });
                     
                     
-                    
-                    $("#totalScore").html(`Total Points: ${score}`);
+                    $("#totalScore").html(`Total Points: ${ranNum}`);
                     
                 }
             })//ready
