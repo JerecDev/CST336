@@ -51,8 +51,10 @@
                     
                     //Slot 1
                     $("#slot1").fadeOut();
+                    $("#slot1").fadeOut('fast', function() {
                     $('#slot1').attr('src', 'images/bar.png');
                     $("#slot1").delay(200).fadeIn();
+                    });
                     //Slot 2
                     $("#slot2").fadeOut();
                     $("#slot2").attr('src', 'images/bar.png');
