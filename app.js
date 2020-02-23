@@ -23,7 +23,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
 app.get('/welcome', (request, response) => {
-    response.render('views/welcome.html');
+    response.render('views/welcome');
 });
 
 
