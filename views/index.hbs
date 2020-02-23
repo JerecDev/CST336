@@ -325,7 +325,7 @@
                     }
                     
                     $("#passwordAgainError").html("");
-                    if($("password").val() != $("#passwordAgain").val()) {
+                    if($("#password").val() != $("#passwordAgain").val()) {
                         $("#passwordAgainError").html("Password Mismatch!");
                         isValid = false;
                     }
