@@ -20,7 +20,7 @@
                 
                 function spinMachine() {
                     
-                    var bet = $("bet").val();
+                    var bet = $("#bet").val();
                     score -= bet;
                     
                     function displayImage(index) {
@@ -58,17 +58,19 @@
                     if (ranNum1 == ranNum2 == ranNum3) {
                         if(ranNum1 == 1) {
                             score += (2 * bet);
+                            $("#bigWinner").html(`Total Points: ${score}`);
                         }
                         if(ranNum1 == 2) {
                             score += (6 * bet);
+                            $("#bigWinner").html(`Total Points: ${score}`);
                         }
                         if(ranNum1 == 3) {
                             score += (4 * bet);
+                            $("#bigWinner").html(`Total Points: ${score}`);
                         }
                     }
                 
                     $("#totalScore").html(`Total Points: ${score}`);
-                    
                 }
             })//ready
         </script>
@@ -88,6 +90,8 @@
         <br></br>
         
         <h2 id="totalScore" class="text-info"></h2>
+        <br>
+        <h3 id="bigWinner" class="text-info"></h3>
         
     </body>
 </html>
