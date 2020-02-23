@@ -55,6 +55,24 @@
                     });//ajax
 
                 });//zip
+                
+                $("state").on("change",function(){
+                    
+                    //alert($("#state").val());
+                    
+                    $.ajax({
+                        method: "GET",
+                        url: "https://itcdland.csumb.edu/~milara/ajax/countyList.php",
+                        dataType: "json",
+                        data: {"state": $("#state").val()},
+                        success: function(result,status) {
+                            
+                            alert(result[0].county);
+                            
+                        }
+                    });//ajax
+                    
+                });//state
             </script>
 
     </body>
