@@ -324,6 +324,7 @@
                         $("#usernameError").html("Username is required");
                     }
                     
+                    $("#passwordAgainError").html("");
                     if($("password").val() != $("#passwordAgain").val()) {
                         $("#passwordAgainError").html("Password Mismatch!");
                         isValid = false;
