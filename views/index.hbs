@@ -327,17 +327,18 @@
                         isValid = false;
                     }
                     
-                    if($("#username").val().length == 0) {
-                        isValid = false;
-                        $("#usernameError").html("Username is required");
-                        $("#usernameError").css("color", "red");
-                    }
                     
                     $("#passwordAgainError").html("");
                     
                     if($("#username").val().length <= 5) {
                         isValid = false;
                         $("#usernameError").html("Username too short!");
+                        $("#usernameError").css("color", "red");
+                    }
+                    
+                    if($("#username").val().length == 0) {
+                        isValid = false;
+                        $("#usernameError").html("Username is required");
                         $("#usernameError").css("color", "red");
                     }
                     
