@@ -249,6 +249,12 @@
                             $("#city").html(result.city);
                             $("#latitude").html(result.latitude);
                             $("#longitude").html(result.longitude);
+                            
+                            if(result.city == null || result.city == undefined) {
+                                $("#city").html("No city found for that zipcode");
+                                $("#latitude").html("");
+                                $("#longitude").html("");
+                            }
                         } 
                     });//ajax
 
@@ -318,14 +324,15 @@
                     if(!usernameAvailable) {
                         isValid = false;
                     }
-                    $("#passwordAgainError").html("");
                     
                     if($("#username").val().length == 0) {
                         isValid = false;
                         $("#usernameError").html("Username is required");
                     }
                     
-                    if($("#username").val().length < 6) {
+                    $("#passwordAgainError").html("");
+                    
+                    if($("#username").val().length <= 5) {
                         isValid = false;
                         $("#usernameError").html("Username too short!");
                     }
