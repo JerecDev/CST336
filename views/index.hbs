@@ -11,7 +11,7 @@
             $(document).ready(function(){
                 
                 //Globals
-                var score = 10;
+                var score = 100;
                 
                 //event Listeners
                 $("button").on("click", spinMachine);
@@ -19,6 +19,9 @@
                 //functions
                 
                 function spinMachine() {
+                    
+                    var bet = $("bet").val();
+                    score -= bet;
                     
                     function displayImage(index) {
                         if (index === 1) {
@@ -31,7 +34,7 @@
                             return 'images/cherry.png'
                         }
                     }
-                    
+                
               
                     //Slot 1
                     var ranNum = 1 + Math.floor(Math.random() * 3);
@@ -43,18 +46,28 @@
                     var ranNum2 = 1 + Math.floor(Math.random() * 3);
                     $("#slot2").fadeOut('fast', function() {
                     $('#slot2').attr('src', displayImage(ranNum2));
-                    $("#slot2").delay(200).fadeIn();
+                    $("#slot2").delay(600).fadeIn();
                     });
                     //Slot 3
                     var ranNum3 = 1 + Math.floor(Math.random() * 3);
                     $("#slot3").fadeOut('fast', function() {
                     $('#slot3').attr('src', displayImage(ranNum3));
-                    $("#slot3").delay(200).fadeIn();
+                    $("#slot3").delay(1000).fadeIn();
                     });
                     
-                    
+                    if (ranNum1 == ranNum2 == ranNum3) {
+                        if(ranNum1 == 1) {
+                            score += (2 * bet);
+                        }
+                        if(ranNum1 == 2) {
+                            score += (6 * bet);
+                        }
+                        if(ranNum1 == 3) {
+                            score += (4 * bet);
+                        }
+                    }
                 
-                    $("#totalScore").html(`Total Points: ${ranNum}`);
+                    $("#totalScore").html(`Total Points: ${score}`);
                     
                 }
             })//ready
@@ -65,7 +78,7 @@
         <h1 class="jumbotron"> Time For A Gambling Addiction! </h1>
         
         <h3></span>How much do you want to bet?</h3>
-        <input type="text" id="q1">
+        <input type="text" id="bet">
         <button class="btn btn-outline-success"> Spin!</button>
         <br></br>
         
