@@ -69,14 +69,16 @@
                 });//zip
                 
                 $("#state").on("change",function(){
-                    
+                    var info = $("#state").val();
+                    info = info.substr(0, 1);
+                    info.toLowerCase();
                     //alert($("#state").val());
                     
                     $.ajax({
                         method: "GET",
                         url: "https://itcdland.csumb.edu/~milara/ajax/countyList.php",
                         dataType: "json",
-                        data: {"state": $("#state").usps.val()},
+                        data: {"state": info},
                         success: function(result,status) {
                             
                             //alert(result[0].county);
