@@ -28,7 +28,7 @@
             
             Select a County: <select id="county"></select><br><br>
             
-            Desired Username: <input type="text"     id="username" name="username">
+            Desired Username: <input type="text"     id="username" name="username"><br>
                               <span id="usernameError"></span><br>
             Password:         <input type="password" id="password" name="password"><br>
             Password Again:   <input type="password" id="passwordAgain"><br>
@@ -330,6 +330,7 @@
                     if($("#username").val().length == 0) {
                         isValid = false;
                         $("#usernameError").html("Username is required");
+                        $("#usernameError").css("color", "red");
                     }
                     
                     $("#passwordAgainError").html("");
@@ -337,6 +338,7 @@
                     if($("#username").val().length <= 5) {
                         isValid = false;
                         $("#usernameError").html("Username too short!");
+                        $("#usernameError").css("color", "red");
                     }
                     
                     if($("#password").val() != $("#passwordAgain").val()) {
