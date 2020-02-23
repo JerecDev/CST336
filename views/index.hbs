@@ -17,8 +17,9 @@
                     
             Zip Code:   <input type="text" name="zip" id="zip"><br>
             City:       <span id="city"></span><br>
-            Latitude:   <br>
-            Longitude   <br><br>
+            Latitude:   <span id="latitude"></span><br>
+            Longitude   <span id="longitude"></span><br>
+            <br>
             State:
             <select id="state" name="state">
                 <option value="">Select One</option>
@@ -46,7 +47,10 @@
                     dataType: "json",
                         data: { "zip": $("#zip").val() },
                     success: function(result,status) {
-                            alert(result);
+                            //alert(result);
+                            $("#city").html(result.city);
+                            $("#latitude").html(result.latitude);
+                            $("#longitude").html(result.longitude);
                         } 
                     });//ajax
 
