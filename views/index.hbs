@@ -88,7 +88,7 @@
                         method: "GET",
                         url: "https://cst336.herokuapp.com/projects/api/usernamesAPI.php",
                         dataType: "json",
-                        data: {"state": $("#state").val()},
+                        data: {"username": $("#username").val() },
                         success: function(result,status) {
                             
                             if(result.available){
