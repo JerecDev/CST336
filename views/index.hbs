@@ -2,6 +2,7 @@
 <html>
     <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
       <title> Sign Up Page </title>
     </head>
 
@@ -14,7 +15,7 @@
             Gender:     <input type="radio" name="gender" value="m"> Male
                         <input type="radio" name="gender" value="f"> Female <br><br>
                     
-            Zip Code:   <input type="text" name="zip" id"zip"><br>
+            Zip Code:   <input type="text" name="zip" id="zip"><br>
             City:       <span id="city"></span><br>
             Latitude:   <br>
             Longitude   <br><br>
@@ -34,7 +35,13 @@
             
             <input type="submit" value="Sign up!">
 
-
+            <script>
+                
+                //Displaying City from API after typing a zip code
+                $("#zip").on("change",function(){
+                    alert($("#zip").val())
+                });//zip
+            </script>
 
     </body>
 
