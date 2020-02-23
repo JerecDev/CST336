@@ -250,7 +250,7 @@
                             $("#latitude").html(result.latitude);
                             $("#longitude").html(result.longitude);
                             
-                            if(result.city == null || result.city == undefined) {
+                            if(result.city === null || result.city === undefined) {
                                 $("#city").html("No city found for that zipcode");
                                 $("#latitude").html("");
                                 $("#longitude").html("");
