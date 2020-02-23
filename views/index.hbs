@@ -39,6 +39,8 @@
         </form>
             <script>
                 
+                var usernameAvailable = false;
+                
                 //Displaying City from API after typing a zip code
                 $("#zip").on("change",function(){
                     //alert($("#zip").val())
@@ -94,21 +96,34 @@
                             if(result.available){
                                 $("#usernameError").html("Username is available!");
                                 $("#usernameError").css("color", "green");
+                                usernameAvailable = true;
                             }
                             else {
                                 $("#usernameError").html("Username is unavailable!");
                                 $("#usernameError").css("color", "red");
+                                usernameAvailable = false;
                             }
                             
                         }
                     });//ajax
                 });//username
                 
-                $("#signupForm").on("submit", function() {
+                $("#signupForm").on("submit", function(event) {
                     
                     alert("Submitting form...");
+                    if(!isFormValid()) {
+                        event.preventDefault();
+                    }
                     
-                })
+                });
+                
+                function isFormValid(){
+                    isValid = true;
+                    if(!usernameAvailable) {
+                        isValid = false;
+                    }
+                    return isValid;
+                }
             </script>
 
     </body>
