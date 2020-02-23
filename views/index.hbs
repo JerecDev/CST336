@@ -257,12 +257,14 @@
                 
                 $("#state").on("change",function(){
                     //alert($("#state").val());
+                    var info = GetStateByName(("#state").val());
+                    console.log(info);
                     
                     $.ajax({
                         method: "GET",
                         url: "https://itcdland.csumb.edu/~milara/ajax/countyList.php",
                         dataType: "json",
-                        data: {"state": GetStateByName(("#state").val())},
+                        data: {"state": info},
                         success: function(result,status) {
                             
                             //alert(result[0].county);
