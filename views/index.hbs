@@ -1,33 +1,41 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>AJAX: Sign Up Page</title>
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title> Sign Up Page </title>
+    </head>
 
-</head>
+    <body>
+        
+        <h1> Sign Up </h1>
+        
+            First Name: <input type="text" name="fName"><br>
+            Last Name:  <input type="text" name="LName"><br>
+            Gender:     <input type="radio" name="gender" value="m"> Male
+                        <input type="radio" name="gender" value="f"> Female <br><br>
+                    
+            Zip Code:   <input type="text" name="zip" id"zip"><br>
+            City:       <span id="city"></span><br>
+            Latitude:   <br>
+            Longitude   <br><br>
+            State:
+            <select id="state" name="state">
+                <option value="">Select One</option>
+                <option value="ca">California</option>
+                <option value="ny">New York</option>
+                <option value="tx">Texas</option>
+            </select><br />
+            
+            Select a County: <select id="county"></select><br><br>
+            
+            Desired Username: <input type="text"     id="username" name="username"><br>
+            Password:         <input type="password" id="password" name="password"><br>
+            Password Again:   <input type="password" id="passwordAgain"><br>
+            
+            <input type="submit" value="Sign up!">
 
-<body id="dummybodyid">
-  <h1> Sign Up Form </h1>
 
-  <form>
-    <fieldset>
-      <legend>Sign Up</legend>
-      <div><label>First Name:</label><input type="text"></div>
-      <div><label>Last Name:</label><input type="text"></div>
-      <div><label>Email:</label><input type="text"></div>
-      <div><label>Phone Number:</label><input type="text"></div>
-      <div><label>Zip Code:</label><input type="text"></div>
-      <div><label>City:</label></div>
-      <div><label>Latitude:</label></div>
-      <div><label>Longitude:</label></div>
-      <div><label>State:</label><input type="text"></div>
-      <div><label>Select a County:</label><select></select></div>
-      <div><label>Desired Username:</label><input type="text"></div>
-      <div><label>Password:</label><input type="password"></div>
-      <div><label>Type Password Again:</label><input type="password"></div>
-      <div><input type="submit" value="Sign up!"></div>
-    </fieldset>
-  </form>
-</body>
+
+    </body>
 
 </html>
