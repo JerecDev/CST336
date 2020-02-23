@@ -23,9 +23,6 @@
             State:
             <select id="state" name="state">
                 <option value="">Select One</option>
-                <option value="ca">California</option>
-                <option value="ny">New York</option>
-                <option value="tx">Texas</option>
             </select><br />
             
             Select a County: <select id="county"></select><br><br>
@@ -59,6 +56,17 @@
                     });//ajax
 
                 });//zip
+                
+                $.ajax({
+                    method: "GET",
+                    url: "https://itcdland.csumb.edu/~milara/ajax/states.php",
+                    dataType: "json",
+                    success: function(result,status) {
+                        result.forEach(function(i) {  
+                            $("#state").append("<option>" + i.state + "</option>");
+                        });
+                    }
+                });//ajax
                 
                 $("#state").on("change",function(){
                     
