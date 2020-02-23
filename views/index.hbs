@@ -65,16 +65,19 @@
                     
                     if (ranNum1 == ranNum2 && ranNum2 == ranNum3) {
                         if(ranNum1 == 1) {
-                            score += (2 * bet);
-                            $("#bigWinner").html(`You Win! Nice Cherries!`);
+                            bet *= 2
+                            score += bet;
+                            $("#bigWinner").html(`You Win! Nice Bars, Bet * 2!`);
                         }
                         if(ranNum1 == 2) {
-                            score += (6 * bet);
-                            $("#bigWinner").html(`You Win! Nice Bars!`);
+                            bet *= 6;
+                            score += 6;
+                            $("#bigWinner").html(`You Win! Amazing Sevens, Bet * 6!`);
                         }
                         if(ranNum1 == 3) {
-                            score += (4 * bet);
-                            $("#bigWinner").html(`You Win! Nice Sevens!`);
+                            bet *= 4
+                            score += bet;
+                            $("#bigWinner").html(`You Win! Sweet Cherries, Bet * 4!`);
                         }
                     }
                 
