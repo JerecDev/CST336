@@ -256,16 +256,13 @@
                 });//zip
                 
                 $("#state").on("change",function(){
-                    var info = $("#state").val();
-                    info = info.substr(0, 2);
-                    info = info.toLowerCase();
                     //alert($("#state").val());
                     
                     $.ajax({
                         method: "GET",
                         url: "https://itcdland.csumb.edu/~milara/ajax/countyList.php",
                         dataType: "json",
-                        data: {"state": toLowerCase.GetStateByName(("#state").val())},
+                        data: {"state": GetStateByName(("#state").val()).toLowerCase()},
                         success: function(result,status) {
                             
                             //alert(result[0].county);
