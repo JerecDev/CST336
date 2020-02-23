@@ -80,7 +80,7 @@
                         success: function(result,status) {
                             
                             //alert(result[0].county);
-                            $("#county").html("<option> Select One </option>");
+                            //$("#county").html("<option> Select One </option>");
                             result.forEach(function(i) {  
                                $("#county").append("<option>" + i.county + "</option>");
                              });
