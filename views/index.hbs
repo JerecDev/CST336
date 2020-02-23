@@ -43,9 +43,9 @@
                 
               
                     //Slot 1
-                    var ranNum = 1 + Math.floor(Math.random() * 3);
+                    var ranNum1 = 1 + Math.floor(Math.random() * 3);
                     $("#slot1").fadeOut('fast', function() {
-                    $('#slot1').attr('src', displayImage(ranNum));
+                    $('#slot1').attr('src', displayImage(ranNum1));
                     $("#slot1").delay(200).fadeIn();
                     });
                     //Slot 2
@@ -63,7 +63,7 @@
                     
                     $("#bigWinner").html(`Better Luck Next Time!`);
                     
-                    if (ranNum1 === ranNum2 && ranNum2 === ranNum3) {
+                    if (ranNum1 == ranNum2 && ranNum2 == ranNum3) {
                         if(ranNum1 == 1) {
                             score += (2 * bet);
                             $("#bigWinner").html(`You Win!`);
