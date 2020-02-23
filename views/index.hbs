@@ -69,9 +69,10 @@
                             
                             //alert(result[0].county);
                             $("#county").html("<option> Select One </option>");
-                            for(let i=0; i < result.length; i++){
-                                $("#county").append("<option>" + result[i].county + "</option>");
-                            }
+                            result.forEach(function(i) {  
+                               $("#county").append("<option>" + i.county + "</option>");
+                             });
+
                             
                         }
                     });//ajax
