@@ -20,21 +20,36 @@
                 
                 function spinMachine() {
                     
-                    var ranNum = 1 + Math.floor(Math.random() * 3);
+                    function displayImage(index) {
+                        if (index === 1) {
+                            return 'image/bar.png';
+                        }
+                        if (index === 2) {
+                            return 'image/7.png';
+                        }
+                        if (index === 3) {
+                            return 'image/cherry.png';
+                        }
+                        return 'image/bar.png';
+                    }
+                    
               
                     //Slot 1
+                    var ranNum = 1 + Math.floor(Math.random() * 3);
                     $("#slot1").fadeOut('fast', function() {
-                    $('#slot1').attr('src', 'images/bar.png');
+                    $('#slot1').attr('src', displayImage(ranNum));
                     $("#slot1").delay(200).fadeIn();
                     });
                     //Slot 2
+                    ranNum = 1 + Math.floor(Math.random() * 3);
                     $("#slot2").fadeOut('fast', function() {
-                    $('#slot2').attr('src', 'images/bar.png');
+                    $('#slot2').attr('src', displayImage(ranNum));
                     $("#slot2").delay(200).fadeIn();
                     });
                     //Slot 3
+                    ranNum = 1 + Math.floor(Math.random() * 3);
                     $("#slot3").fadeOut('fast', function() {
-                    $('#slot3').attr('src', 'images/bar.png');
+                    $('#slot3').attr('src', displayImage(ranNum));
                     $("#slot3").delay(200).fadeIn();
                     });
                 
