@@ -1,108 +1,33 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src = "https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js" ></script> 
-        <meta charset="utf-8">
-        <title>US Quiz</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-        <script>
-            $(document).ready(function(){
-                
-                //Globals
-                var score = 100;
-                
-                //event Listeners
-                $("button").on("click", spinMachine);
-                
-                //functions
-                
-                function spinMachine() {
-                    
-                    var bet = $("#bet").val();
-                    
-                    if(bet == "") {
-                         $("#bigWinner").html(`Please Enter A Bet!`);
-                        return
-                    }
-                    
-                    score -= bet;
-                    
-                    function displayImage(index) {
-                        if (index === 1) {
-                            return 'images/bar.png';
-                        }
-                        if (index === 2) {
-                            return 'images/7.png'
-                        }
-                        if (index === 3) {
-                            return 'images/cherry.png'
-                        }
-                    }
-                
-              
-                    //Slot 1
-                    var ranNum1 = 1 + Math.floor(Math.random() * 3);
-                    $("#slot1").fadeOut('fast', function() {
-                    $('#slot1').attr('src', displayImage(ranNum1));
-                    $("#slot1").delay(200).fadeIn();
-                    });
-                    //Slot 2
-                    var ranNum2 = 1 + Math.floor(Math.random() * 3);
-                    $("#slot2").fadeOut('fast', function() {
-                    $('#slot2').attr('src', displayImage(ranNum2));
-                    $("#slot2").delay(600).fadeIn();
-                    });
-                    //Slot 3
-                    var ranNum3 = 1 + Math.floor(Math.random() * 3);
-                    $("#slot3").fadeOut('fast', function() {
-                    $('#slot3').attr('src', displayImage(ranNum3));
-                    $("#slot3").delay(1000).fadeIn();
-                    });
-                    
-                    $("#bigWinner").html(`Better Luck Next Time!`);
-                    
-                    if (ranNum1 == ranNum2 && ranNum2 == ranNum3) {
-                        if(ranNum1 == 1) {
-                            bet *= 2
-                            score += bet;
-                            $("#bigWinner").html(`You Win! Nice Bars, Bet * 2!`);
-                        }
-                        if(ranNum1 == 2) {
-                            bet *= 6;
-                            score += 6;
-                            $("#bigWinner").html(`You Win! Amazing Sevens, Bet * 6!`);
-                        }
-                        if(ranNum1 == 3) {
-                            bet *= 4
-                            score += bet;
-                            $("#bigWinner").html(`You Win! Sweet Cherries, Bet * 4!`);
-                        }
-                    }
-                
-                    $("#totalScore").html(`Total Points: ${score}`);
-                }
-            })//ready
-        </script>
-    </head>
-    <body class="text-center">
-        
-        <h1 class="jumbotron"> Time For A Gambling Addiction! </h1>
-        
-        <h3></span>How much do you want to bet?</h3>
-        <input type="text" id="bet">
-        <button class="btn btn-outline-success"> Spin!</button>
-        <br></br>
-        
-        <img src="images/7.png" alt="7" class="slots" id="slot1">
-        <img src="images/7.png" alt="7" class="slots" id="slot2">
-        <img src="images/7.png" alt="7" class="slots" id="slot3">
-        <br></br>
-        
-        <h2 id="totalScore" class="text-info"></h2>
-        <br>
-        <h3 id="bigWinner" class="text-info"></h3>
-        
-    </body>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>AJAX: Sign Up Page</title>
+
+</head>
+
+<body id="dummybodyid">
+  <h1> Sign Up Form </h1>
+
+  <form>
+    <fieldset>
+      <legend>Sign Up</legend>
+      <div><label>First Name:</label><input type="text"></div>
+      <div><label>Last Name:</label><input type="text"></div>
+      <div><label>Email:</label><input type="text"></div>
+      <div><label>Phone Number:</label><input type="text"></div>
+      <div><label>Zip Code:</label><input type="text"></div>
+      <div><label>City:</label></div>
+      <div><label>Latitude:</label></div>
+      <div><label>Longitude:</label></div>
+      <div><label>State:</label><input type="text"></div>
+      <div><label>Select a County:</label><select></select></div>
+      <div><label>Desired Username:</label><input type="text"></div>
+      <div><label>Password:</label><input type="password"></div>
+      <div><label>Type Password Again:</label><input type="password"></div>
+      <div><input type="submit" value="Sign up!"></div>
+    </fieldset>
+  </form>
+</body>
+
 </html>
