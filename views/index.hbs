@@ -21,7 +21,9 @@
             Longitude   <span id="longitude"></span><br>
             <br>
             State:
-            <select id="state" name="state"></select><br />
+            <select id="state" name="state">
+                <option value="">Select One</option>
+            </select><br />
             
             Select a County: <select id="county"></select><br><br>
             
@@ -74,7 +76,7 @@
                         method: "GET",
                         url: "https://itcdland.csumb.edu/~milara/ajax/countyList.php",
                         dataType: "json",
-                        data: {"state": $("#state").val()},
+                        data: {"state": $("#state").usps.val()},
                         success: function(result,status) {
                             
                             //alert(result[0].county);
