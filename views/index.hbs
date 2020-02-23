@@ -21,6 +21,12 @@
                 function spinMachine() {
                     
                     var bet = $("#bet").val();
+                    
+                    if(bet == "") {
+                         $("#bigWinner").html(`Please Enter A Bet!`);
+                        return
+                    }
+                    
                     score -= bet;
                     
                     function displayImage(index) {
@@ -55,18 +61,20 @@
                     $("#slot3").delay(1000).fadeIn();
                     });
                     
+                    $("#bigWinner").html(`Better Luck Next Time!`);
+                    
                     if (ranNum1 == ranNum2 == ranNum3) {
                         if(ranNum1 == 1) {
                             score += (2 * bet);
-                            $("#bigWinner").html(`Total Points: ${score}`);
+                            $("#bigWinner").html(`You Win!`);
                         }
                         if(ranNum1 == 2) {
                             score += (6 * bet);
-                            $("#bigWinner").html(`Total Points: ${score}`);
+                            $("#bigWinner").html(`You Win!`);
                         }
                         if(ranNum1 == 3) {
                             score += (4 * bet);
-                            $("#bigWinner").html(`Total Points: ${score}`);
+                            $("#bigWinner").html(`You Win!`);
                         }
                     }
                 
