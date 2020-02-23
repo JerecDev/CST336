@@ -318,13 +318,18 @@
                     if(!usernameAvailable) {
                         isValid = false;
                     }
+                    $("#passwordAgainError").html("");
                     
                     if($("#username").val().length == 0) {
                         isValid = false;
                         $("#usernameError").html("Username is required");
                     }
                     
-                    $("#passwordAgainError").html("");
+                    if($("#username").val().length < 6) {
+                        isValid = false;
+                        $("#usernameError").html("Username too short!");
+                    }
+                    
                     if($("#password").val() != $("#passwordAgain").val()) {
                         $("#passwordAgainError").html("Password Mismatch!");
                         isValid = false;
