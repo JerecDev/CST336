@@ -22,7 +22,6 @@
             <br>
             State:
             <select id="state" name="state">
-                <option value="">Select One</option>
             </select><br />
             
             Select a County: <select id="county"></select><br><br>
@@ -44,6 +43,7 @@
                     url: "https://itcdland.csumb.edu/~milara/ajax/states.php",
                     dataType: "json",
                     success: function(result,status) {
+                        $("#state").append("<option> Select One </option>");
                         result.forEach(function(i) {  
                             $("#state").append("<option>" + i.state + "</option>");
                         });
