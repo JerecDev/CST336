@@ -39,6 +39,17 @@
                 
                 var usernameAvailable = false;
                 
+                $.ajax({
+                    method: "GET",
+                    url: "https://itcdland.csumb.edu/~milara/ajax/states.php",
+                    dataType: "json",
+                    success: function(result,status) {
+                        result.forEach(function(i) {  
+                            $("#state").append("<option>" + i.state + "</option>");
+                        });
+                    }
+                });//ajax
+                
                 //Displaying City from API after typing a zip code
                 $("#zip").on("change",function(){
                     //alert($("#zip").val())
@@ -57,17 +68,6 @@
 
                 });//zip
                 
-                $.ajax({
-                    method: "GET",
-                    url: "https://itcdland.csumb.edu/~milara/ajax/states.php",
-                    dataType: "json",
-                    success: function(result,status) {
-                        result.forEach(function(i) {  
-                            $("#state").append("<option>" + i.state + "</option>");
-                        });
-                    }
-                });//ajax
-                
                 $("#state").on("change",function(){
                     
                     //alert($("#state").val());
@@ -80,7 +80,7 @@
                         success: function(result,status) {
                             
                             //alert(result[0].county);
-                            //$("#county").html("<option> Select One </option>");
+                            $("#county").html("<option> Select One </option>");
                             result.forEach(function(i) {  
                                $("#county").append("<option>" + i.county + "</option>");
                              });
