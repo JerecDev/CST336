@@ -34,6 +34,7 @@
                               <span id="usernameError"></span><br>
             Password:         <input type="password" id="password" name="password"><br>
             Password Again:   <input type="password" id="passwordAgain"><br>
+                              <span id="passwordAgainError"></span> <br /><br>
             
             <input type="submit" value="Sign up!">
         </form>
@@ -120,6 +121,16 @@
                 function isFormValid(){
                     isValid = true;
                     if(!usernameAvailable) {
+                        isValid = false;
+                    }
+                    
+                    if($("#username").val().length == 0) {
+                        isValid = false;
+                        $("#usernameError").html("Username is required");
+                    }
+                    
+                    if($("password").val() != $("#passwordAgain").val()) {
+                        $("passwordAgainError").html("Password Mismatch!");
                         isValid = false;
                     }
                     return isValid;
