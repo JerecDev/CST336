@@ -1,355 +1,48 @@
 <!DOCTYPE html>
-<html>
-    <head>
-      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-      <title> Sign Up Page </title>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    </head>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Pixabay</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <link href="style.css" rel="stylesheet" type="text/css" />
 
-    <body class = "text-center">
-        
-        <h1 class="jumbotron", style="background-color:powderblue;"> Sign Up </h1>
-        <form id="signupForm" method="get" action="/welcome">
-            First Name: <input type="text" name="fName"><br>
-            Last Name:  <input type="text" name="LName"><br>
-            Gender:     <input type="radio" name="gender" value="m"> Male
-                        <input type="radio" name="gender" value="f"> Female <br><br>
-                    
-            Zip Code:   <input type="text" name="zip" id="zip"><br>
-            City:       <span id="city"></span><br>
-            Latitude:   <span id="latitude"></span><br>
-            Longitude   <span id="longitude"></span><br>
-            <br>
-            State:
-            <select id="state" name="state">
-            </select><br />
-            
-            Select a County: <select id="county"></select><br><br>
-            
-            Desired Username: <input type="text"     id="username" name="username"><br>
-                              <span id="usernameError"></span><br>
-            Password:         <input type="password" id="password" name="password"><br>
-            Password Again:   <input type="password" id="passwordAgain"><br>
-                              <span id="passwordAgainError"></span> <br /><br>
-            
-            <input type="submit" value="Sign up!">
-        </form>
-            <script>
-                
-                
-                function GetStateByName(name)
-        {
-            switch (name.toUpperCase())
-            {
-                case "ALABAMA":
-                    return "AL";
+  </head>
+  <body class="text-center">
+    <h1 class="jumbotron">Pixabay Image Search</h1>
+    <form id="imageSearch" class="container" method="get">
+      Keyword: <input type="text" id="keyword" name="keyword">
+      <br>
+      Orientation: <select id=orientation>
+          <option value="hor">Horizontal</option>
+          <option value="ver">Vertical</option>
+      </select>
+      <input type="submit" id="submit" value="Search">
+      <br><br>
+    </form>
+    <div class="row justify-content-center">
+      <div class="col-4">
+        <span id="pic1Likes"></span>
+        <br>
+        <img src="" id="first">
+      </div>
+      <div class="col-4">
+        <span id="pic2Likes"></span>
+        <br>
+        <img src="" id="second">
+      </div>
+      <div class="col-4">
+        <span id="pic3Likes"></span>
+        <br>
+        <img src="" id="third">
+      </div>
+      <div class="col-4">
+        <span id="pic4Likes"></span>
+        <br>
+        <img src="" id="fourth">
+      </div>
+    </div>
 
-                case "ALASKA":
-                    return "AK";
+    <script SRC="functions.js"></script>
 
-                case "AMERICAN SAMOA":
-                    return "AS";
-
-                case "ARIZONA":
-                    return "AZ";
-
-                case "ARKANSAS":
-                    return "AR";
-
-                case "CALIFORNIA":
-                    return "CA";
-
-                case "COLORADO":
-                    return "CO";
-
-                case "CONNECTICUT":
-                    return "CT";
-
-                case "DELAWARE":
-                    return "DE";
-
-                case "DISTRICT OF COLUMBIA":
-                    return "DC";
-
-                case "FEDERATED STATES OF MICRONESIA":
-                    return "FM";
-
-                case "FLORIDA":
-                    return "FL";
-
-                case "GEORGIA":
-                    return "GA";
-
-                case "GUAM":
-                    return "GU";
-
-                case "HAWAII":
-                    return "HI";
-
-                case "IDAHO":
-                    return "ID";
-
-                case "ILLINOIS":
-                    return "IL";
-
-                case "INDIANA":
-                    return "IN";
-
-                case "IOWA":
-                    return "IA";
-
-                case "KANSAS":
-                    return "KS";
-
-                case "KENTUCKY":
-                    return "KY";
-
-                case "LOUISIANA":
-                    return "LA";
-
-                case "MAINE":
-                    return "ME";
-
-                case "MARSHALL ISLANDS":
-                    return "MH";
-
-                case "MARYLAND":
-                    return "MD";
-
-                case "MASSACHUSETTS":
-                    return "MA";
-
-                case "MICHIGAN":
-                    return "MI";
-
-                case "MINNESOTA":
-                    return "MN";
-
-                case "MISSISSIPPI":
-                    return "MS";
-
-                case "MISSOURI":
-                    return "MO";
-
-                case "MONTANA":
-                    return "MT";
-
-                case "NEBRASKA":
-                    return "NE";
-
-                case "NEVADA":
-                    return "NV";
-
-                case "NEW HAMPSHIRE":
-                    return "NH";
-
-                case "NEW JERSEY":
-                    return "NJ";
-
-                case "NEW MEXICO":
-                    return "NM";
-
-                case "NEW YORK":
-                    return "NY";
-
-                case "NORTH CAROLINA":
-                    return "NC";
-
-                case "NORTH DAKOTA":
-                    return "ND";
-
-                case "NORTHERN MARIANA ISLANDS":
-                    return "MP";
-
-                case "OHIO":
-                    return "OH";
-
-                case "OKLAHOMA":
-                    return "OK";
-
-                case "OREGON":
-                    return "OR";
-
-                case "PALAU":
-                    return "PW";
-
-                case "PENNSYLVANIA":
-                    return "PA";
-
-                case "PUERTO RICO":
-                    return "PR";
-
-                case "RHODE ISLAND":
-                    return "RI";
-
-                case "SOUTH CAROLINA":
-                    return "SC";
-
-                case "SOUTH DAKOTA":
-                    return "SD";
-
-                case "TENNESSEE":
-                    return "TN";
-
-                case "TEXAS":
-                    return "TX";
-
-                case "UTAH":
-                    return "UT";
-
-                case "VERMONT":
-                    return "VT";
-
-                case "VIRGIN ISLANDS":
-                    return "VI";
-
-                case "VIRGINIA":
-                    return "VA";
-
-                case "WASHINGTON":
-                    return "WA";
-
-                case "WEST VIRGINIA":
-                    return "WV";
-
-                case "WISCONSIN":
-                    return "WI";
-
-                case "WYOMING":
-                    return "WY";
-            }
-            return "aa";
-        }
-                
-                
-                var usernameAvailable = false;
-                
-                $.ajax({
-                    method: "GET",
-                    url: "https://itcdland.csumb.edu/~milara/ajax/states.php",
-                    dataType: "json",
-                    success: function(result,status) {
-                        $("#state").append("<option> Select One </option>");
-                        result.forEach(function(i) {  
-                            $("#state").append("<option>" + i.state + "</option>");
-                        });
-                    }
-                });//ajax
-                
-                //Displaying City from API after typing a zip code
-                $("#zip").on("change",function(){
-                    //alert($("#zip").val())
-                    $.ajax({
-                        method: "GET",
-                        url: "https://itcdland.csumb.edu/~milara/ajax/cityInfoByZip.php",
-                    dataType: "json",
-                        data: { "zip": $("#zip").val() },
-                    success: function(result,status) {
-                            //alert(result);
-                            $("#city").html(result.city);
-                            $("#latitude").html(result.latitude);
-                            $("#longitude").html(result.longitude);
-                            
-                            if(result.city === null || result.city === undefined) {
-                                $("#city").html("No city found for that zipcode");
-                                $("#latitude").html("");
-                                $("#longitude").html("");
-                            }
-                        } 
-                    });//ajax
-
-                });//zip
-                
-                $("#state").on("change",function(){
-                    //alert($("#state").val());
-                    var info = GetStateByName($("#state").val());
-                    console.log(info);
-                    
-                    $.ajax({
-                        method: "GET",
-                        url: "https://itcdland.csumb.edu/~milara/ajax/countyList.php",
-                        dataType: "json",
-                        data: {"state": info},
-                        success: function(result,status) {
-                            
-                            //alert(result[0].county);
-                            $("#county").html("<option> Select One </option>");
-                            result.forEach(function(i) {  
-                               $("#county").append("<option>" + i.county + "</option>");
-                             });
-
-                            
-                        }
-                    });//ajax
-                    
-                });//state
-                
-                $("#username").change(function() {
-                    
-                    //alert($("#username").val());
-                    
-                    $.ajax({
-                        method: "GET",
-                        url: "https://cst336.herokuapp.com/projects/api/usernamesAPI.php",
-                        dataType: "json",
-                        data: {"username": $("#username").val() },
-                        success: function(result,status) {
-                            
-                            if(result.available){
-                                $("#usernameError").html("Username is available!");
-                                $("#usernameError").css("color", "green");
-                                usernameAvailable = true;
-                            }
-                            else {
-                                $("#usernameError").html("Username is unavailable!");
-                                $("#usernameError").css("color", "red");
-                                usernameAvailable = false;
-                            }
-                            
-                        }
-                    });//ajax
-                });//username
-                
-                $("#signupForm").on("submit", function(event) {
-                    
-                    alert("Submitting form...");
-                    if(!isFormValid()) {
-                        event.preventDefault();
-                    }
-                    
-                });
-                
-                function isFormValid(){
-                    isValid = true;
-                    if(!usernameAvailable) {
-                        isValid = false;
-                    }
-                    
-                    
-                    $("#passwordAgainError").html("");
-                    
-                    if($("#username").val().length <= 5) {
-                        isValid = false;
-                        $("#usernameError").html("Username too short!");
-                        $("#usernameError").css("color", "red");
-                    }
-                    
-                    if($("#username").val().length == 0) {
-                        isValid = false;
-                        $("#usernameError").html("Username is required");
-                        $("#usernameError").css("color", "red");
-                    }
-                    
-                    if($("#password").val() != $("#passwordAgain").val()) {
-                        $("#passwordAgainError").html("Password Mismatch!");
-                        isValid = false;
-                    }
-                    return isValid;
-                }
-            </script>
-
-    </body>
-
+  </body>
 </html>
