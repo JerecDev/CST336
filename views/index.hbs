@@ -9,7 +9,22 @@
     </head>
     
     
-      <div class="imgLike">
+    
+        <body class="text-center">
+        <h1 class="jumbotron">Pixabay Image Search</h1>
+        <form id="imageSearch" class="container" method="get">
+          Keyword: <input type="text" id="keyword" name="keyword">
+          <br>
+          Orientation: <select id=orientation>
+              <option value="horizontal">Horizontal</option>
+              <option value="vertical">Vertical</option>
+          </select>
+          <input type="submit" id="submit" value="Search">
+          <br><br>
+        </form>
+    
+    
+    <div class="imgLike">
         <span id="img1Likes"></span>
         <br>
         <img src="" id="first">
@@ -29,23 +44,7 @@
         <br>
         <img src="" id="fourth">
       </div>
-    </div>    
-    
-    
-    
-        <body class="text-center">
-        <h1 class="jumbotron">Pixabay Image Search</h1>
-        <form id="imageSearch" class="container" method="get">
-          Keyword: <input type="text" id="keyword" name="keyword">
-          <br>
-          Orientation: <select id=orientation>
-              <option value="horizontal">Horizontal</option>
-              <option value="vertical">Vertical</option>
-          </select>
-          <input type="submit" id="submit" value="Search">
-          <br><br>
-        </form>
-    
+    </div>  
     
     
     <script>
