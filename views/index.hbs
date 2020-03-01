@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <title>Pixabay</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-  </head>
+<html>
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <title> Pixabay Image Search </title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    
   <body class="text-center">
     <h1 class="jumbotron">Pixabay Image Search</h1>
     <form id="imageSearch" class="container" method="get">
@@ -18,6 +20,8 @@
       <input type="submit" id="submit" value="Search">
       <br><br>
     </form>
+    
+    
     <div class="row justify-content-center">
       <div class="imgLike">
         <span id="img1Likes"></span>
@@ -46,8 +50,8 @@
 
         $(document).ready(function() {
             
-            var firstImgs = ["sand", "mountains", "landscapes", "stuff", "blocks", "chairs", "interior"];
-            let firstImg = Math.floor(Math.random() * 6);    
+            var firstImgs = ["sand", "mountains", "landscapes", "stuff", "blocks", "chairs", "interior", "crocodile", "alligator"];
+            let firstImg = Math.floor(Math.random() * 8);    
             
             $.ajax({
                 method: "GET",
