@@ -16,7 +16,8 @@
         <form id="imageSearch" class="form" method="get">
           Keyword: <input type="text" id="keyword" name="keyword">
           <br>
-          Orientation: <select id=orientation>
+          Orientation: 
+          <select id=orientation>
               <option value="horizontal">Horizontal</option>
               <option value="vertical">Vertical</option>
           </select>
@@ -74,7 +75,7 @@
                 method: "GET",
                 url: "https://pixabay.com/api/",
                 dataType: "json",
-                data: { "key": "13951242-f031e44171b4cc55e1cbaabed", "q":  firstImgs[firstImg], "orientation": $("#orientation").val() },
+                data: { "key": "5589438-47a0bca778bf23fc2e8c5bf3e", "q":  firstImgs[firstImg], "orientation": $("#orientation").val() },
                 success: function(result, status) {
                     let rand1 = Math.floor(Math.random() * result.hits.length);
                     let rand2 = Math.floor(Math.random() * result.hits.length);
@@ -102,7 +103,7 @@
                     method: "GET",
                     url: "https://pixabay.com/api/",
                     dataType: "json",
-                    data: { "key": "13951242-f031e44171b4cc55e1cbaabed", "q": $("#keyword").val(), "orientation": $("#orientation").val() },
+                    data: { "key": "5589438-47a0bca778bf23fc2e8c5bf3e", "q": $("#keyword").val(), "orientation": $("#orientation").val() },
                     success: function(result, status) {
                         let rand1 = Math.floor(Math.random() * result.hits.length);
                         let rand2 = Math.floor(Math.random() * result.hits.length);
