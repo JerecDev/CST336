@@ -32,6 +32,7 @@
         <br>
         <img src="" id="first">
       </div>
+      <br>
       
       Second Image
      <div class="img">
@@ -39,6 +40,7 @@
         <br>
         <img src="" id="second">
       </div>
+      <br>
       
       Third Image
       <div class="img">
@@ -46,6 +48,7 @@
         <br>
         <img src="" id="third">
       </div>
+      <br>
       
       Fourth Image
       <div class="img">
@@ -83,10 +86,10 @@
                     $("#third").attr('src', result.hits[rand3].previewURL);
                     $("#fourth").attr('src', result.hits[rand4].previewURL);
 
-                    $("#img1Likes").html(result.hits[rand1].likes + "likes");
-                    $("#img2Likes").html(result.hits[rand2].likes + "likes");
-                    $("#img3Likes").html(result.hits[rand3].likes + "likes");
-                    $("#img4Likes").html(result.hits[rand4].likes + "likes");
+                    $("#img1Likes").html(result.hits[rand1].likes + " likes");
+                    $("#img2Likes").html(result.hits[rand2].likes + " likes");
+                    $("#img3Likes").html(result.hits[rand3].likes + " likes");
+                    $("#img4Likes").html(result.hits[rand4].likes + " likes");
                 }
             });
             
@@ -106,10 +109,10 @@
                         let index3 = Math.floor(Math.random() * result.hits.length);
                         let index4 = Math.floor(Math.random() * result.hits.length);
 
-                        $("#first").attr('src', result.hits[index1].previewURL);
-                        $("#second").attr('src', result.hits[index2].previewURL);
-                        $("#third").attr('src', result.hits[index3].previewURL);
-                        $("#fourth").attr('src', result.hits[index4].previewURL);
+                        $("#first").attr('src', result.hits[index1].previewURL + " likes");
+                        $("#second").attr('src', result.hits[index2].previewURL + " likes");
+                        $("#third").attr('src', result.hits[index3].previewURL + " likes");
+                        $("#fourth").attr('src', result.hits[index4].previewURL + " likes");
 
                         $("#img1Likes").html(result.hits[rand1].likes);
                         $("#img2Likes").html(result.hits[rand2].likes);
