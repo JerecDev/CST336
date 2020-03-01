@@ -10,3 +10,8 @@ body {
 .img {
     color: darkblue ;
 }
+
+.form {
+    border-style: outset;
+    border-color: purple;
+}
