@@ -12,6 +12,7 @@ body {
 }
 
 .form {
+    align-items: center;
     border-style: groove;
     border-color: purple;
     width: 500px;
