@@ -12,6 +12,7 @@ body {
 }
 
 .form {
-    border-style: outset;
+    border-style: groove;
+    border-radius: 40px;
     border-color: purple;
 }
