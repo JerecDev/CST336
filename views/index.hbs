@@ -19,37 +19,36 @@
       <br><br>
     </form>
     <div class="row justify-content-center">
-      <div class="col-4">
-        <span id="pic1Likes"></span>
+      <div class="imgLike">
+        <span id="img1Likes"></span>
         <br>
         <img src="" id="first">
       </div>
-      <div class="col-4">
-        <span id="pic2Likes"></span>
+      <div class="imgLike">
+        <span id="img2Likes"></span>
         <br>
         <img src="" id="second">
       </div>
-      <div class="col-4">
-        <span id="pic3Likes"></span>
+      <div class="imgLike">
+        <span id="img3Likes"></span>
         <br>
         <img src="" id="third">
       </div>
-      <div class="col-4">
-        <span id="pic4Likes"></span>
+      <div class="imgLike">
+        <span id="img4Likes"></span>
         <br>
         <img src="" id="fourth">
       </div>
     </div>
     
     <script>
-        
-        //var keywords = ["cars", "sports", "animals", "people", "places", "castles"];
 
         let rand1 = Math.floor(Math.random() * 20);
         let rand2 = Math.floor(Math.random() * 20);
         let rand3 = Math.floor(Math.random() * 20);
         let rand4 = Math.floor(Math.random() * 20);
 
+/*
         $(document).ready(function() {
             $.ajax({
                 method: "GET",
@@ -62,12 +61,13 @@
                     $("#third").attr('src', result.hits[rand3].previewURL);
                     $("#fourth").attr('src', result.hits[rand4].previewURL);
 
-                    $("#pic1Likes").html(result.hits[rand1].likes);
-                    $("#pic2Likes").html(result.hits[rand2].likes);
-                    $("#pic3Likes").html(result.hits[rand3].likes);
-                    $("#pic4Likes").html(result.hits[rand4].likes);
+                    $("#img1Likes").html(result.hits[rand1].likes);
+                    $("#img2Likes").html(result.hits[rand2].likes);
+                    $("#img3Likes").html(result.hits[rand3].likes);
+                    $("#img4Likes").html(result.hits[rand4].likes);
                 }
             });
+            */
 
             $("#imageSearch").submit(function(e) {
                 e.preventDefault();
@@ -88,10 +88,10 @@
                         $("#third").attr('src', result.hits[index3].previewURL);
                         $("#fourth").attr('src', result.hits[index4].previewURL);
 
-                        $("#pic1Likes").html(result.hits[rand1].likes);
-                        $("#pic2Likes").html(result.hits[rand2].likes);
-                        $("#pic3Likes").html(result.hits[rand3].likes);
-                        $("#pic4Likes").html(result.hits[rand4].likes);
+                        $("#img1Likes").html(result.hits[rand1].likes);
+                        $("#img2Likes").html(result.hits[rand2].likes);
+                        $("#img3Likes").html(result.hits[rand3].likes);
+                        $("#img4Likes").html(result.hits[rand4].likes);
                     }
 
                 });
