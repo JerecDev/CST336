@@ -43,19 +43,23 @@
     
     <script>
 
-        let rand1 = Math.floor(Math.random() * 20);
-        let rand2 = Math.floor(Math.random() * 20);
-        let rand3 = Math.floor(Math.random() * 20);
-        let rand4 = Math.floor(Math.random() * 20);
 
-/*
         $(document).ready(function() {
+            
+            var firstImgs = ["sand", "mountains", "landscapes", "stuff", "blocks", "chairs", "interior"];
+            let firstImg = Math.floor(Math.random() * 6);    
+            
             $.ajax({
                 method: "GET",
                 url: "https://pixabay.com/api/",
                 dataType: "json",
-                data: { "key": "13951242-f031e44171b4cc55e1cbaabed", "q": "cars", "orientation": $("#orientation").val() },
+                data: { "key": "13951242-f031e44171b4cc55e1cbaabed", "q":  firstImgs[firstImg], "orientation": $("#orientation").val() },
                 success: function(result, status) {
+                    let rand1 = Math.floor(Math.random() * 20);
+                    let rand2 = Math.floor(Math.random() * 20);
+                    let rand3 = Math.floor(Math.random() * 20);
+                    let rand4 = Math.floor(Math.random() * 20);
+                
                     $("#first").attr('src', result.hits[rand1].previewURL);
                     $("#second").attr('src', result.hits[rand2].previewURL);
                     $("#third").attr('src', result.hits[rand3].previewURL);
@@ -67,7 +71,7 @@
                     $("#img4Likes").html(result.hits[rand4].likes);
                 }
             });
-            */
+            
 
             $("#imageSearch").submit(function(e) {
                 e.preventDefault();
