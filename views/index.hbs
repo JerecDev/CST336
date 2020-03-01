@@ -6,6 +6,7 @@
       <title> Pixabay Image Search </title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+      <link href="/public/styles.css" rel="stylesheet" type="text/css" />
     </head>
     
     
@@ -25,28 +26,28 @@
     
     
     
-    //First Image
+    First Image
     <div class="img">
         <span id="img1Likes"></span>
         <br>
         <img src="" id="first">
       </div>
       
-      //Second Image
+      Second Image
      <div class="img">
         <span id="img2Likes"></span>
         <br>
         <img src="" id="second">
       </div>
       
-      //Third Image
+      Third Image
       <div class="img">
         <span id="img3Likes"></span>
         <br>
         <img src="" id="third">
       </div>
       
-      //Fourth Image
+      Fourth Image
       <div class="img">
         <span id="img4Likes"></span>
         <br>
@@ -82,10 +83,10 @@
                     $("#third").attr('src', result.hits[rand3].previewURL);
                     $("#fourth").attr('src', result.hits[rand4].previewURL);
 
-                    $("#img1Likes").html(result.hits[rand1].likes);
-                    $("#img2Likes").html(result.hits[rand2].likes);
-                    $("#img3Likes").html(result.hits[rand3].likes);
-                    $("#img4Likes").html(result.hits[rand4].likes);
+                    $("#img1Likes").html(result.hits[rand1].likes + "likes");
+                    $("#img2Likes").html(result.hits[rand2].likes + "likes");
+                    $("#img3Likes").html(result.hits[rand3].likes + "likes");
+                    $("#img4Likes").html(result.hits[rand4].likes + "likes");
                 }
             });
             
