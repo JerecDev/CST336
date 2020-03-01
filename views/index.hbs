@@ -11,7 +11,7 @@
     
     
         <body class="text-center">
-        <h1 class="jumbotron">Pixabay Image Search</h1>
+        <h1 class="jumbotron", background-color:"green">Pixabay Image Search</h1>
         <form id="imageSearch" class="container" method="get">
           Keyword: <input type="text" id="keyword" name="keyword">
           <br>
@@ -24,37 +24,48 @@
         </form>
     
     
-    <div class="imgLike">
+    
+    //First Image
+    <div class="img">
         <span id="img1Likes"></span>
         <br>
         <img src="" id="first">
       </div>
-      <div class="imgLike">
+      
+      //Second Image
+     <div class="img">
         <span id="img2Likes"></span>
         <br>
         <img src="" id="second">
       </div>
-      <div class="imgLike">
+      
+      //Third Image
+      <div class="img">
         <span id="img3Likes"></span>
         <br>
         <img src="" id="third">
       </div>
-      <div class="imgLike">
+      
+      //Fourth Image
+      <div class="img">
         <span id="img4Likes"></span>
         <br>
         <img src="" id="fourth">
       </div>
-    </div>  
+      
     
     
     <script>
 
-
+        
         $(document).ready(function() {
             
+            
+            //Predetermined array
             var firstImgs = ["sand", "mountains", "landscapes", "stuff", "blocks", "chairs", "interior", "crocodile", "alligator"];
             let firstImg = Math.floor(Math.random() * 8);    
             
+            //Generating it the first time from the array
             $.ajax({
                 method: "GET",
                 url: "https://pixabay.com/api/",
@@ -78,7 +89,8 @@
                 }
             });
             
-
+            //When the image search form is submitted this function is called to populate
+            //images 1-4 with the keywords and orientation selected
             $("#imageSearch").submit(function(e) {
                 e.preventDefault();
 
@@ -108,8 +120,6 @@
             });
         });
     </script>
-    
-    
 
   </body>
 </html>
