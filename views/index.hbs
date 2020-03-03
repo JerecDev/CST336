@@ -12,52 +12,14 @@
     
     
         <body class="text-center">
-        <h1 class="jumbotron">Pixabay Image Search</h1>
+        <h1 class="jumbotron">Rando Doggo Gallery-o</h1>
         <form id="imageSearch" class="form" method="get">
           Keyword: <input type="text" id="keyword" name="keyword">
           <br>
-          Orientation: 
-          <select id=orientation>
-              <option value="horizontal">Horizontal</option>
-              <option value="vertical">Vertical</option>
-          </select>
+
           <input type="submit" id="submit" value="Search">
           <br><br>
         </form>
-    
-    
-    
-    First Image
-    <div class="img">
-        <span id="img1Likes"></span>
-        <br>
-        <img src="" id="first" class="images">
-      </div>
-      <br>
-      
-      Second Image
-     <div class="img">
-        <span id="img2Likes"></span>
-        <br>
-        <img src="" id="second" class="images">
-      </div>
-      <br>
-      
-      Third Image
-      <div class="img">
-        <span id="img3Likes"></span>
-        <br>
-        <img src="" id="third" class="images">
-      </div>
-      <br>
-      
-      Fourth Image
-      <div class="img">
-        <span id="img4Likes"></span>
-        <br>
-        <img src="" id="fourth" class="images">
-      </div>
-      
     
     
     <script>
@@ -66,59 +28,23 @@
         $(document).ready(function() {
             
             
-            //Predetermined array
-            var firstImgs = ["sand", "mountains", "landscapes", "stuff", "blocks", "chairs", "interior", "crocodile", "alligator"];
-            let firstImg = Math.floor(Math.random() * 8);    
-            
             //Generating it the first time from the array
-            $.ajax({
-                method: "GET",
-                url: "https://pixabay.com/api/",
-                dataType: "json",
-                data: { "key": "5589438-47a0bca778bf23fc2e8c5bf3e", "q":  firstImgs[firstImg], "orientation": $("#orientation").val() },
-                success: function(result, status) {
-                    let rand1 = Math.floor(Math.random() * result.hits.length);
-                    let rand2 = Math.floor(Math.random() * result.hits.length);
-                    let rand3 = Math.floor(Math.random() * result.hits.length);
-                    let rand4 = Math.floor(Math.random() * result.hits.length);
-                
-                    $("#first").attr('src', result.hits[rand1].previewURL);
-                    $("#second").attr('src', result.hits[rand2].previewURL);
-                    $("#third").attr('src', result.hits[rand3].previewURL);
-                    $("#fourth").attr('src', result.hits[rand4].previewURL);
-
-                    $("#img1Likes").html(result.hits[rand1].likes + " likes");
-                    $("#img2Likes").html(result.hits[rand2].likes + " likes");
-                    $("#img3Likes").html(result.hits[rand3].likes + " likes");
-                    $("#img4Likes").html(result.hits[rand4].likes + " likes");
-                }
-            });
-            
-            //When the image search form is submitted this function is called to populate
-            //images 1-4 with the keywords and orientation selected
             $("#imageSearch").submit(function(e) {
                 e.preventDefault();
 
                 $.ajax({
                     method: "GET",
-                    url: "https://pixabay.com/api/",
+                    url: "https://dog.ceo/api/breeds/image/random/" + $("#keyword").val(),
                     dataType: "json",
-                    data: { "key": "5589438-47a0bca778bf23fc2e8c5bf3e", "q": $("#keyword").val(), "orientation": $("#orientation").val() },
                     success: function(result, status) {
-                        let rand1 = Math.floor(Math.random() * result.hits.length);
-                        let rand2 = Math.floor(Math.random() * result.hits.length);
-                        let rand3 = Math.floor(Math.random() * result.hits.length);
-                        let rand4 = Math.floor(Math.random() * result.hits.length);
-
-                        $("#first").attr('src', result.hits[rand1].previewURL);
-                        $("#second").attr('src', result.hits[rand2].previewURL);
-                        $("#third").attr('src', result.hits[rand3].previewURL);
-                        $("#fourth").attr('src', result.hits[rand4].previewURL);
-
-                        $("#img1Likes").html(result.hits[rand1].likes  + " likes");
-                        $("#img2Likes").html(result.hits[rand2].likes  + " likes");
-                        $("#img3Likes").html(result.hits[rand3].likes  + " likes");
-                        $("#img4Likes").html(result.hits[rand4].likes  + " likes");
+                       
+                        var counter = 0;
+                        while (counter < $("#keyword").val()) {
+                        var img = new Image(); 
+                        img.src =  result.hits[counter].previewURL;
+                        document.getElementById('body').appendChild(img);
+                        
+                        }
                     }
 
                 });
