@@ -6,12 +6,11 @@
       <title> Pixabay Image Search </title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-      <link rel="stylesheet" href="/stylesheets/styles.css">
     </head>
     
     
     
-        <body class="text-center">
+    <body id = "body" class="text-center">
         <h1 class="jumbotron">Rando Doggo Gallery-o</h1>
         <form id="imageSearch" class="form" method="get">
           Keyword: <input type="text" id="keyword" name="keyword">
@@ -20,9 +19,10 @@
           <input type="submit" id="submit" value="Search">
           <br><br>
         </form>
-    
-    
-    <script>
+
+  </body>
+  
+      <script>
 
         
         $(document).ready(function() {
@@ -38,19 +38,23 @@
                     dataType: "json",
                     success: function(result, status) {
                        
+                       console.log(result);
+                       
                         var counter = 0;
                         while (counter < $("#keyword").val()) {
                         var img = new Image(); 
-                        img.src =  result.hits[counter].previewURL;
-                        document.getElementById('body').appendChild(img);
+                        img.src =  result.message[counter];
+                        document.getElementById("body").appendChild(img);
+                        console.log(result.message[counter]);
                         counter++;
-                        }
+
+                        
+                       }
+                        
                     }
 
                 });
             });
         });
     </script>
-
-  </body>
 </html>
