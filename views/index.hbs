@@ -38,8 +38,8 @@
                     dataType: "json",
                     success: function(result, status) {
                        
-                        var counter = 0;
-                        while (counter < $("#keyword").val()) {
+                        var counter = 1;
+                        while (counter <= $("#keyword").val()) {
                         var img = new Image(); 
                         img.src =  result.hits[counter].previewURL;
                         document.getElementById('body').appendChild(img);
