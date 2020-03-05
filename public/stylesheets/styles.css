@@ -1,4 +1,4 @@
-.cover {
+.cover col-sm-3 {
   border: 5px;
   border-radius: 10px;
 }
@@ -6,7 +6,7 @@
 .info {
   margin: 50px;
   font-size: 25px;
-  column-count: 4;
+  
 }
 
 
