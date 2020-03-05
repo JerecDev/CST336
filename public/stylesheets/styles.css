@@ -1,7 +1,8 @@
 .cover{
   border-style:solid;
-  border: 30px;
-  border-radius: 20px;
+  border: 5px;
+  border-radius: 10px;
+  border-color: black;
 }
 
 .info {
