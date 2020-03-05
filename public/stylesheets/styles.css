@@ -1,4 +1,5 @@
-.cover col-sm-3 {
+.cover{
+  border-style:solid;
   border: 5px;
   border-radius: 10px;
 }
@@ -10,10 +11,6 @@
 }
 
 
-
-#buttonBook {
-  
-}
 
 
 /*
