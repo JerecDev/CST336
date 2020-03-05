@@ -6,12 +6,13 @@
 .info {
   margin: 50px;
   font-size: 25px;
+  column-count: 4;
 }
 
 
 
 #buttonBook {
-  white-space: normal;
+  
 }
 
 
