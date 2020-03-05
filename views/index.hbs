@@ -41,7 +41,50 @@
     </div>
 
     <script>
-        
+    buttonBook.addEventListener("click", function(){
+    $(".info").empty();
+    $(".cover").empty();
+
+    if($("#inputNum").val() == 0){
+      return;
+    }
+
+    var ISBN = $("#inputNum").val();
+    $.ajax({
+        method: "GET",
+        url: "https://openlibrary.org/api/books",
+        dataType: "json",
+        data: {
+          "bibkeys" : ISBN,
+          "format" : "json",
+          "jscmd" : "data"
+        },
+        success: function(book, status) {
+
+          var results = book[ISBN];
+
+          var title = results["title"];
+          var author = results["by_statement"];
+          var publishYear = results["publish_date"];
+          var publishers = results["publishers"];
+          var pages = results["number_of_pages"];
+
+          var linkObj = results["cover"];
+          var link = linkObj["medium"];
+
+          var img = "<div class='cover col-sm-3'><img src='" + link + "'></div>"
+
+          $(".cover").append(img);
+
+          $(".info").append("Title: " + title + "<br>");
+          $(".info").append("Author: " + author + "<br>");
+          $(".info").append("Published: " + publishYear + "<br>");
+          $(".info").append("Publisher: " + publishers[0].name + "<br>");
+          $(".info").append("ISBN: " + ISBN + "<br>");
+          $(".info").append("Pages: " + pages + "<br>");
+        }
+    });
+})    
         
     </script>
   </body>
