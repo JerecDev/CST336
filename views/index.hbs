@@ -3,58 +3,44 @@
     <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-      <title> Pixabay Image Search </title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+        <link rel="stylesheet" href="/stylesheets/styles.css">
+      <title>ISBN Lookup!</title>
+      
     </head>
     
     
     
-    <body id = "body" class="text-center">
-        <h1 class="jumbotron">Rando Doggo Gallery-o</h1>
-        <form id="imageSearch" class="form" method="get">
-          Keyword: <input type="text" id="keyword" name="keyword">
-          <br>
+   <body>
+    <div class="container">
 
-          <input type="submit" id="submit" value="Search">
-          <br><br>
+      <!--Query Section-->
+      <div class="jumbotron">
+        <h1>Open Library</h1>
+        <p>Please enter the ISBN of the book you're looking to retrive</p>
+        <form action="index.html" method="get">
+          <label for="inputNum" class="col-sm-2 col-form-label">ISBN</label>
+          <input id="inputNum" class="col-sm-4 col-form-input" type="text" name="number" placeholder="0">
+          <button class="btn btn-primary col-sm-4 col-form-btn" type="button" id="buttonBook" name="buttonBook">Query</button>
         </form>
+      </div>
 
+      <!--Results Section-->
+
+      <div class="cover col-sm-3">
+
+      </div>
+
+      <div class="info col-sm-4">
+
+
+      </div>
+
+
+    </div>
+
+    <script src="js/functions.js"></script>
   </body>
-  
-      <script>
-
-        
-        $(document).ready(function() {
-            
-            
-            //Generating it the first time from the array
-            $("#imageSearch").submit(function(e) {
-                e.preventDefault();
-
-                $.ajax({
-                    method: "GET",
-                    url: "https://dog.ceo/api/breeds/image/random/" + $("#keyword").val(),
-                    dataType: "json",
-                    success: function(result, status) {
-                       
-                       console.log(result);
-                       
-                        var counter = 0;
-                        while (counter < $("#keyword").val()) {
-                        var img = new Image(); 
-                        img.src =  result.message[counter];
-                        document.getElementById("body").appendChild(img);
-                        console.log(result.message[counter]);
-                        counter++;
-
-                        
-                       }
-                        
-                    }
-
-                });
-            });
-        });
-    </script>
 </html>
