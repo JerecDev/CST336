@@ -20,7 +20,7 @@
         <h1>Open Library</h1>
         <p>Please enter the ISBN of the book you're looking to retrive</p>
         <form action="index.hbs" method="get">
-          <label class="col-sm-2 col-form-label">ISBN</label>
+          <label class="col-sm-2">ISBN</label>
           <input id="inputNum" class="col-sm-4" type="text" name="number">
           <button class="btn btn-primary col-sm-6" type="button" id="isbnLookup" name="isbnLookup">Query</button>
         </form>
@@ -36,6 +36,9 @@
 
     <script>
     isbnLookup.addEventListener("click", function(){
+        
+    $(".info").empty();
+    $(".cover").empty();
 
 
     var ISBN = $("#inputNum").val();
