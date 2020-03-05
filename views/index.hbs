@@ -53,10 +53,10 @@
           "format" : "json",
           "jscmd" : "data"
         },
-        success: function(book, status) {
+        success: function(result, status) {
 
         // Getting all the results
-          var results = book[ISBN];
+          var results = result[ISBN];
           var title = results["title"];
           var author = results["by_statement"];
           var publishYear = results["publish_date"];
