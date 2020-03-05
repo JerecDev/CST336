@@ -55,21 +55,18 @@
         },
         success: function(book, status) {
 
+        // Getting all the results
           var results = book[ISBN];
-
           var title = results["title"];
           var author = results["by_statement"];
           var publishYear = results["publish_date"];
           var publishers = results["publishers"];
           var pages = results["number_of_pages"];
-
           var linkObj = results["cover"];
           var link = linkObj["medium"];
-
           var img = "<div class='cover col-sm-3'><img src='" + link + "'></div>"
-
+        // Placing all the results where they're supposed to go
           $(".cover").append(img);
-
           $(".info").append("Title: " + title + "<br>");
           $(".info").append("Author: " + author + "<br>");
           $(".info").append("Publish: " + publishYear + "<br>");
