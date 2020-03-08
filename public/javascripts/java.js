@@ -1,7 +1,8 @@
     genderLookup.addEventListener("click", function(){
         
 
-  let name = $("#inputName").val(); 
+  let name = $("#inputName").val();
+  console.log(name);
   
   $.ajax({
       method: "GET",
