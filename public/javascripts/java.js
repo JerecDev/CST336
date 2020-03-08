@@ -1,5 +1,6 @@
-    genderLookup.addEventListener("click", function(){
-        
+
+$("#genderLookup").submit(function(e){
+    e.preventDefault();
 
   let name = $("#inputName").val();
   console.log(name);
@@ -9,7 +10,7 @@
       url: "https://www.behindthename.com/api/lookup.json",
       dataType: "json",
       data: {
-          "key": "fo524612915",
+          "key": "za407011376",
           "name" : name },
       success: function(result){
           console.log(result);
