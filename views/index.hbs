@@ -16,19 +16,18 @@
 
       <div class="jumbotron">
         <h1>Gender Name Checking</h1>
-        <form action="index.hbs" method="get">
+        <form class="genderLookup" action="index.hbs" method="get">
           <label class="col-sm-2">Name:</label>
           <input id="inputName" class="col-sm-4" type="text" name="number">
-          <button class="btn btn-primary col-sm-6" type="button" id="genderLookup">Lookup</button>
+          <button class="btn btn-primary" type="button" id="genderLook">Lookup</button>
         </form>
       </div>
 
-      <div class="col-sm-3">
-          <div class ="nameBox">
-          </div>
-      </div>
-      <div class="genderBox col-sm-4">
-      </div>
+        <div class="flex-container">
+          <h2 class = "flex-item" id="nameBox"></h4>
+          <br>
+          <h2 class = "flex-item" id="genderBox"></h4>
+        </div>
 
     </div>
     
