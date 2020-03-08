@@ -9,24 +9,25 @@
       url: "https://www.behindthename.com/api/lookup.json",
       dataType: "json",
       data: {
-          "key": "za407011376",
+          "key": "fo524612915",
           "name" : name },
       success: function(result){
-          
-          if(result[0].gender == "m"){
+          console.log(result);
+          if(result[0].gender == "f"){
+              $(".jumbotron").css("border", "solid pink 5px");
               $("#nameBox").html("Name: " + result[0].name); 
               $("#genderBox").html("Gender: Female");
-              $(".jumbotron").css("border", "solid pink 7px");
-              
-          } else if(result[0].gender == "f"){
+              console.log("Female");
+          } else if(result[0].gender == "m"){
+              $(".jumbotron").css("border", "solid blue 5px");
               $("#nameBox").html("Name: " + result[0].name); 
               $("#genderBox").html("Gender: Male");
-              $(".jumbotron").css("border", "solid blue 7px");
-              
+              console.log("Male");
           } else {
+              $(".jumbotron").css("border", "solid violet 5px");
               $("#nameBox").html("Name: " + result[0].name); 
-              $("#genderBox").html("Neutral Gender");
-              $(".jumbotron").css("border", "solid gray 7px");
+              $("#genderBox").html("Gender: Either");
+              console.log("MF")
           }
       }
   });
