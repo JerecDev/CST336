@@ -1,4 +1,4 @@
-    $("#genderLookup").submit(function(e){
+    genderLookup.addEventListener("click", function(){
         
     $(".nameBox").empty();
     $(".genderBox").empty();
@@ -14,7 +14,7 @@
           "key": "za407011376",
           "name" : name },
       success: function(result){
-          console.log(result);
+          
           if(result[0].gender == "m"){
               $("#nameBox").html("Name: " + result[0].name); 
               $("#genderBox").html("Gender: Female");
