@@ -18,19 +18,19 @@ $("#genderLookup").submit(function(e){
               $(".jumbotron").css("border", "solid pink 5px");
               $("#nameBox").html("Name: " + result[0].name); 
               $("#genderBox").html("Gender: Female");
-              $(".h2").css("background", "pink");
+              $("#genderBox").css("background", "pink");
 
           } else if(result[0].gender == "m"){
               $(".jumbotron").css("border", "solid blue 5px");
               $("#nameBox").html("Name: " + result[0].name); 
               $("#genderBox").html("Gender: Male");
-              $(".h2").css("background", "blue");
+              $("#genderBox").css("background", "blue");
 
           } else {
               $(".jumbotron").css("border", "solid violet 5px");
               $("#nameBox").html("Name: " + result[0].name); 
               $("#genderBox").html("Gender: Neutral");
-              $(".h2").css("background", "gray");
+              $("#genderBox").css("background", "gray");
 
 
           }
