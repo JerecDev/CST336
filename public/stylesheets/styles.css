@@ -8,7 +8,7 @@ body {
 
 .jumbotron {
   color: gray;
-  background: darkred;
+  background: darkgreen;
   border-style: groove;
   border-width: 5px;
   border-color: gray;
@@ -18,10 +18,13 @@ body {
   text-align: center;
 }
 
-.h2 {
-  background-color: gray;
+.genderBox {
+  border-style: groove;
+  border-color: gray;
 }
 
-.h1 {
-  
+.nameBox {
+  border-style: groove;
+  border-color: gray;
 }
+
