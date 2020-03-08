@@ -9,6 +9,9 @@ body {
 .jumbotron {
   color: gray;
   background: darkred;
+  border-style: groove;
+  border-width: 5px;
+  border-color: gray;
 }
 
 .flex-container {
@@ -16,7 +19,7 @@ body {
 }
 
 .h2 {
-  background-color: green;
+  background-color: gray;
 }
 
 .h1 {

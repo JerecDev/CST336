@@ -13,22 +13,26 @@ $("#genderLookup").submit(function(e){
           "key": "za407011376",
           "name" : name },
       success: function(result){
-          console.log(result);
+
           if(result[0].gender == "f"){
               $(".jumbotron").css("border", "solid pink 5px");
               $("#nameBox").html("Name: " + result[0].name); 
               $("#genderBox").html("Gender: Female");
-              console.log("Female");
+              $(".h2").css("background", "pink");
+
           } else if(result[0].gender == "m"){
               $(".jumbotron").css("border", "solid blue 5px");
               $("#nameBox").html("Name: " + result[0].name); 
               $("#genderBox").html("Gender: Male");
-              console.log("Male");
+              $(".h2").css("background", "blue");
+
           } else {
               $(".jumbotron").css("border", "solid violet 5px");
               $("#nameBox").html("Name: " + result[0].name); 
-              $("#genderBox").html("Gender: Either");
-              console.log("MF")
+              $("#genderBox").html("Gender: Neutral");
+              $(".h2").css("background", "gray");
+
+
           }
       }
   });
