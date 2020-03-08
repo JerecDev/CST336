@@ -5,9 +5,8 @@
       <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
       <link rel="stylesheet" href="/stylesheets/styles.css">
-      <title>ISBN Lookup!</title>
+      <title>Gender Checking</title>
     </head>
     
     
@@ -15,68 +14,24 @@
    <body>
     <div class="container">
 
-      <!--Query-->
       <div class="jumbotron">
-        <h1>Open Library</h1>
-        <p>Please enter the ISBN of the book you're looking to retrive</p>
+        <h1>Gender Name Checking</h1>
         <form action="index.hbs" method="get">
-          <label class="col-sm-2">ISBN</label>
-          <input id="inputNum" class="col-sm-4" type="text" name="number">
-          <button class="btn btn-primary col-sm-6" type="button" id="isbnLookup" name="isbnLookup">Query</button>
+          <label class="col-sm-2">Name:</label>
+          <input id="inputName" class="col-sm-4" type="text" name="number">
+          <button class="btn btn-primary col-sm-6" type="button" id="genderLookup">Lookup</button>
         </form>
       </div>
 
-      <!--Result-->
       <div class="col-sm-3">
-          <div class ="cover">
+          <div class ="nameBox">
           </div>
       </div>
-      <div class="info col-sm-4">
+      <div class="genderBox col-sm-4">
       </div>
 
     </div>
-
-    <script>
-    isbnLookup.addEventListener("click", function(){
-        
-    $(".info").empty();
-    $(".cover").empty();
-
-
-    var ISBN = $("#inputNum").val();
-    $.ajax({
-        method: "GET",
-        url: "https://openlibrary.org/api/books",
-        dataType: "json",
-        data: {
-          "bibkeys" : ISBN,
-          "format" : "json",
-          "jscmd" : "data"
-        },
-        success: function(result, status) {
-
-        // Getting all the results
-          var results = result[ISBN];
-          var title = results["title"];
-          var author = results["by_statement"];
-          var publishYear = results["publish_date"];
-          var publishers = results["publishers"];
-          var pages = results["number_of_pages"];
-          var linkObj = results["cover"];
-          var link = linkObj["medium"];
-          var img = "<div class='cover col-sm-3'><img src='" + link + "'></div>"
-        // Placing all the results where they're supposed to go
-          $(".cover").append(img);
-          $(".info").append("Title: " + title + "<br>");
-          $(".info").append("Author: " + author + "<br>");
-          $(".info").append("Publish: " + publishYear + "<br>");
-          $(".info").append("Publisher: " + publishers[0].name + "<br>");
-          $(".info").append("ISBN: " + ISBN + "<br>");
-          $(".info").append("Pages: " + pages + "<br>");
-        }
-    });
-})    
-        
-    </script>
+    
+    <script type="text/javascript" SRC="javascripts/java.js"></script>
   </body>
 </html>
