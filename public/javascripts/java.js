@@ -29,7 +29,7 @@ $("#genderLookup").submit(function(e){
               $("#nameBox").css("background", "blue");
 
           } else {
-              $(".jumbotron").css("border", "solid violet 5px");
+              $(".jumbotron").css("border", "solid gray 5px");
               $("#nameBox").html("Name: " + result[0].name); 
               $("#genderBox").html("Gender: Neutral");
               $("#genderBox").css("background", "gray");

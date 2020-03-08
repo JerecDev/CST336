@@ -8,8 +8,8 @@ body {
 }
 
 .jumbotron {
-  color: lightgray;
-  background: darkgreen;
+  color: black;
+  background: lightgreen;
   border-style: groove;
   border-width: 5px;
   border-color: gray;
