@@ -1,8 +1,5 @@
     genderLookup.addEventListener("click", function(){
         
-    $(".nameBox").empty();
-    $(".genderBox").empty();
-
 
   let name = $("#inputName").val(); 
   
