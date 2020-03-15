@@ -1,19 +1,24 @@
 .jumbotron {
-  background-color: black;
+  background-color: darkgreen;
   color: black;
 }
 
 body {
-  background-color: #CBE2F6;
+  background-color: black;
   text-align: center;
 }
 
 h1 {
-  color: blue;
+  color: lightgray;
 }
 
 h2 {
-  color: red;
+  color: lightgreen;
+  font-size: small;
+}
+
+p {
+  color:lightgray;
 }
 
 body {
@@ -24,7 +29,5 @@ body {
 nav a{
   padding: 15px;
   padding-bottom: 4px;
-  font-size: 1.8em;
-  text-decoration: none;
-  color: white;
+  color: lightgray;
 }
