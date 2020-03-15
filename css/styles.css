@@ -1,0 +1,30 @@
+.jumbotron {
+  background-color: black;
+  color: black;
+}
+
+body {
+  background-color: #CBE2F6;
+  text-align: center;
+}
+
+h1 {
+  color: blue;
+}
+
+h2 {
+  color: red;
+}
+
+body {
+  margin: 50px 0px auto auto;
+  text-align: center;
+}
+
+nav a{
+  padding: 15px;
+  padding-bottom: 4px;
+  font-size: 1.8em;
+  text-decoration: none;
+  color: white;
+}
