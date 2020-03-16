@@ -21,6 +21,14 @@ app.get("/earth", function(req, res){
 res.render('earth.html');
 });
 
+app.get("/uranus", function(req, res){
+res.render('uranus.html');
+});
+
+app.get("/jupiter", function(req, res){
+res.render('jupiter.html');
+});
+
 app.get("*", function(req, res){
   res.render('error')
 });
