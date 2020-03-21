@@ -16,10 +16,7 @@ app.get("/", async function(req, res){
  
  console.dir("parsedData: " + parsedData); //displays content of the object
     
- res.render("index", {"image":parsedData.hits[0].largeImageURL});
- res.render("index", {"image2":parsedData.hits[0].largeImageURL});
- res.render("index", {"image3":parsedData.hits[0].largeImageURL});
- res.render("index", {"image4":parsedData.hits[0].largeImageURL});
+ res.render("index", {"image":parsedData.hits.largeImageURL});
             
 }); //root route
 
