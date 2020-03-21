@@ -1,7 +1,4 @@
-.jumbotron {
-  background-color: darkgreen;
-  color: black;
-}
+
 
 body {
   background-color: black;
@@ -10,22 +7,9 @@ body {
 
 h1 {
   color: lightgray;
-}
-
-h2 {
-  color: lightgreen;
-  font-size: small;
-}
-
-p {
-  color:lightgray;
+  text-align: center;
 }
 
 body {
   text-align: center;
-}
-
-nav a{
-  padding-bottom: 5px;
-  color: lightgray;
 }
