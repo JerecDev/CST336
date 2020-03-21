@@ -4,16 +4,22 @@ app.set("view engine", "ejs");
 app.use(express.static("css"));
 app.use(express.static("public"));
 
+var firstImgs = ["sand", "mountains", "landscapes", "stuff", "blocks", "chairs", "interior", "crocodile", "alligator"];
+let firstImg = Math.floor(Math.random() * 8);  
+
 const request = require('request');
 
 //routes
 app.get("/", async function(req, res){
     
- let parsedData = await getImages("otters");
+ let parsedData = await getImages(firstImgs[firstImg]);
  
  console.dir("parsedData: " + parsedData); //displays content of the object
     
  res.render("index", {"image":parsedData.hits[0].largeImageURL});
+ res.render("index", {"image":parsedData.hits[1].largeImageURL});
+ res.render("index", {"image":parsedData.hits[2].largeImageURL});
+ res.render("index", {"image":parsedData.hits[3].largeImageURL});
             
 }); //root route
 
