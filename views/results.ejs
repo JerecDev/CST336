@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title> Pixabay Search (Express Version) </title>
-    </head>
+    <%- include('partials/header') -%>
     <body>
 
         <h1> Pixabay Search Results </h1>
@@ -13,8 +11,6 @@
             <button> Search! </button>
             
         </form> <br>
-        
-        TODO: Display several images here!<br>
         
         <img src='<%= images.hits[0].largeImageURL %>' width='250'>
          <img src='<%= images.hits[1].largeImageURL %>' width='250'>
