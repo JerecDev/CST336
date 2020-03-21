@@ -5,7 +5,7 @@ app.use(express.static("css"));
 app.use(express.static("public"));
 
 var firstImgs = ["sand", "mountains", "landscapes", "stuff", "blocks", "chairs", "interior", "crocodile", "alligator", "chevrolet", "movie", "theatre"];
- 
+let firstImg = Math.floor(Math.random() * 11);  
 
 const request = require('request');
 
@@ -17,6 +17,9 @@ app.get("/", async function(req, res){
  console.dir("parsedData: " + parsedData); //displays content of the object
     
  res.render("index", {"image":parsedData.hits[0].largeImageURL});
+ res.render("index", {"image2":parsedData.hits[0].largeImageURL});
+ res.render("index", {"image3":parsedData.hits[0].largeImageURL});
+ res.render("index", {"image4":parsedData.hits[0].largeImageURL});
             
 }); //root route
 
