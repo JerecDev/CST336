@@ -1,7 +1,8 @@
 const express = require("express");
 const app = express();
 app.set("view engine", "ejs");
-app.use(express.static("public")); //folder for images, css, js
+app.use(express.static("css"));
+app.use(express.static("public"));
 
 const request = require('request');
 
