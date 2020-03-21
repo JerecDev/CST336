@@ -5,14 +5,15 @@ app.use(express.static("css"));
 app.use(express.static("public"));
 
 var firstImgs = ["sand", "mountains", "landscapes", "stuff", "blocks", "chairs", "interior", "crocodile", "alligator", "chevrolet", "movie", "theatre"];
-let firstImg = Math.floor(Math.random() * 11);  
+
 
 const request = require('request');
 
 //routes
 app.get("/", async function(req, res){
     
- let parsedData = await getImages(firstImgs);
+ let firstImg = Math.floor(Math.random() * 11);   
+ let parsedData = await getImages(firstImgs[firstImg]);
  
  console.dir("parsedData: " + parsedData); //displays content of the object
     
@@ -22,7 +23,6 @@ app.get("/", async function(req, res){
 
 
 app.get("/results", async function(req, res){
-    
     //console.dir(req);
     let keyword = req.query.keyword; //gets the value that the user typed in the form using the GET method
     
