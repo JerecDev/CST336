@@ -41,7 +41,7 @@ function getImages(keyword, orientation){
     
     return new Promise( function(resolve, reject){
         request('https://pixabay.com/api/?key=5589438-47a0bca778bf23fc2e8c5bf3e&q=' + keyword,
-        +'?orientation='+ orientation,
+        + '&orientation=' + orientation,
                  function (error, response, body) {
     
             if (!error && response.statusCode == 200  ) { //no issues in the request
