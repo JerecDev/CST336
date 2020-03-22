@@ -28,6 +28,7 @@ app.get("/results", async function(req, res){
     
     let orie = req.query.orientation;
     console.log(orie);
+    console.log("orientation");
     
     let parsedData = await getImages(keyword, orie);
 
