@@ -3,65 +3,25 @@ const app = express();
 app.set("view engine", "ejs");
 app.use(express.static("css"));
 app.use(express.static("public"));
-
-var firstImgs = ["sand", "mountains", "landscapes", "stuff", "blocks", "chairs", "interior", "crocodile", "alligator", "chevrolet", "movie", "theatre"];
-
-
 const request = require('request');
 
 //routes
-app.get("/", async function(req, res){
-    
- let firstImg = Math.floor(Math.random() * 11);   
- let parsedData = await getImages(firstImgs[firstImg]);
- 
- console.dir("parsedData: " + parsedData); //displays content of the object
-    
- res.render("index", {"images":parsedData});
-
-            
+app.get("/", async function (req, res){
+    res.render("index");
 }); //root route
 
 
 app.get("/results", async function(req, res){
     let keyword = req.query.keyword; //gets the value that the user typed in the form using the GET method
-    
-    let orie = req.query.orientation;
-    
-    let parsedData = await getImages(keyword, orie);
-
-    res.render("results", {"images":parsedData});
-    
+    var url = 'https://openlibrary.org/api/books?bibkeys=ISBN:' + keyword + '&format=json&jscmd=data';
+	request(url, function(error, response, bookData){
+		if (!error && response.statusCode == 200){
+			var data = JSON.parse(bookData);
+			res.render('results', {data:data, keyword:keyword});
+		}
+	});
 });//results route
 
-
-//Returns all data from the Pixabay API as JSON format
-function getImages(keyword, orientation){
-    
-    
-    return new Promise( function(resolve, reject){
-        request('https://pixabay.com/api/?key=5589438-47a0bca778bf23fc2e8c5bf3e&q=' + keyword
-        + '&orientation=' + orientation,
-                 function (error, response, body) {
-    
-            if (!error && response.statusCode == 200  ) { //no issues in the request
-                
-                 let parsedData = JSON.parse(body); //converts string to JSON
-                 
-                 resolve(parsedData);
-                
-                
-            } else {
-                reject(error);
-                console.log(response.statusCode);
-                console.log(error);
-            }
-    
-          });//request
-   
-    });
-    
-}
 
 
 //starting server
