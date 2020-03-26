@@ -12,12 +12,12 @@ app.get("/", function (req, res){
 
 
 app.get("/results", function(req, res){
-    let query = req.query.search; //gets the value that the user typed in the form using the GET method
+    var query = req.query.search; //gets the value that the user typed in the form using the GET method
 	var url = 'https://openlibrary.org/api/books?bibkeys=ISBN:' + query + '&format=json&jscmd=data';
 	request(url, function(error, response, dataStream){
 		if (!error && response.statusCode == 200){
 			var data = JSON.parse(dataStream);
-			res.render('results', {data:data, query:query});
+			res.render("results", {data:data, query:query});
 		}
 	});
 });//results route
