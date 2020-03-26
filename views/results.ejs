@@ -9,16 +9,16 @@
         <button class='btn btn-info' onclick='location.href="/";'>Search Again?</button>
         
 
-        <!--<ul id='movies'>-->
-        <!--    <h1>-->
-        <!--        <%= data["ISBN:" + query].by_statement %>-->
-        <!--        Author(s): <%= data["ISBN: " +  query].by_statement %>-->
-        <!--        Publisher(s): <%= data["ISBN: " +  query].publishers[0].name %>-->
-        <!--        Date Published: <%= data["ISBN:" + query].publish_date %>-->
-        <!--        Number Of Pages: <%= data["ISBN:" + query].number_of_pages %>-->
-        <!--        <img class="poster" src="<%= data["ISBN:" + query].cover.large %>">-->
-        <!--    </h1>-->
-        <!--</ul>-->
+        <ul id='movies'>
+            <h1>
+                <%= data["ISBN:" + query].by_statement %>
+                Author(s): <%= data["ISBN: " +  query].by_statement %>
+                Publisher(s): <%= data["ISBN: " +  query].publishers[0].name %>
+                Date Published: <%= data["ISBN:" + query].publish_date %>
+                Number Of Pages: <%= data["ISBN:" + query].number_of_pages %>
+                <img class="poster" src="<%= data["ISBN:" + query].cover.large %>">
+            </h1>
+        </ul>
 
     </body>
 </html>
