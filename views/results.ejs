@@ -11,7 +11,8 @@
 
         <ul id='movies'>
             <h1>
-                <%= data["ISBN:" + query].by_statement %>
+                
+                <%= data["ISBN:" + query].title %>
                 Author(s): <%= data["ISBN: " +  query].by_statement %>
                 Publisher(s): <%= data["ISBN: " +  query].publishers[0].name %>
                 Date Published: <%= data["ISBN:" + query].publish_date %>
