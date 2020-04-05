@@ -10,6 +10,10 @@ app.get("/", function (req, res){
     res.render("index");
 }); //root route
 
+app.get("/pascal", function (req, res){
+    res.render("pascal");
+});
+
 
 app.get("/results", function(req, res){
     var query = req.query.search; //gets the value that the user typed in the form using the GET method
