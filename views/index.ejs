@@ -1,18 +1,40 @@
 <!DOCTYPE html>
 <html>
-    <%- include('partials/header') -%>
+    
+    
     <body>
-
-        <div class= 'jumbotron'>
-        <h1> Open Library API Search </h1>
-        </div>
+        <%- include('partials/header') -%>
+        <nav>
+            <hr width="50%" />
+            <b href="/index">Home</b>
+            <a href="/about">C++</a>
+            <a href="/contact">Java</a>
+            <a href="/pascal">Pascal</a>
+        </nav>
         
-        <form action="/results" method="GET">
+        <br /><br />
+        
+        <main>
+            <figure id="servers">
+                <img src="public/img/servers.png" alt="Picture of server farm" />
+            </figure>
             
-            ISBN To Search: <input type="text" name="search">
-            <br>
-            <button> Search! </button> 
-        </form> <br><br>
-        
+            <div id="servers">
+                <p>For programming, there are many languages to choose from! <br>
+                However, most programmers don't know the advantages to using one over
+                the other.</p>
+                
+                <p>I hope to educate those visiting this website on some of these
+                differences..</p>
+                
+                <p>Please, enjoy!</p>
+                
+                <p>Source: <a href="https://www.online-sciences.com/programming/programming-languages-types-features-advantages-and-disadvantages/">online-sciences.com</a></p>
+                <br /><br />
+            </div>
+        </main>
+        <%- include('partials/footer') -%> 
     </body>
+    
+    
 </html>
