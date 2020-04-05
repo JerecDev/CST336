@@ -18,6 +18,16 @@ app.get("/pascal", function (req, res){
     res.render("pascal");
 });
 
+app.get("/c++", function (req, res){
+    res.render("c++");
+});
+
+app.get("/java", function (req, res){
+    res.render("java");
+});
+
+
+
 
 app.get("/results", function(req, res){
     var query = req.query.search; //gets the value that the user typed in the form using the GET method
