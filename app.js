@@ -1,28 +1,29 @@
 const express = require("express");
 const app = express();
-app.engine('html', require('ejs').renderFile);
+app.set("view engine", "ejs");
+
 app.use(express.static("css"));
 app.use(express.static("public"));
 
 //routes
 app.get("/", function (req, res){
-    res.render("index.html");
+    res.render("index.ejs");
 }); //root route
 
 app.get("/index", function (req, res){
-    res.render("index.html");
+    res.render("index.ejs");
 });
 
 app.get("/c", function (req, res){
-    res.render("c.html");
+    res.render("c.ejs");
 });
 
 app.get("/pascal", function (req, res){
-    res.render("pascal.html");
+    res.render("pascal.ejs");
 });
 
 app.get("/java", function (req, res){
-    res.render("java.html");
+    res.render("java.ejs");
 });
 
 //starting server
