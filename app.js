@@ -9,6 +9,9 @@ app.get("/", function (req, res){
     res.render("index.html");
 }); //root route
 
+app.get("/index", function (req, res){
+    res.render("index.html");
+});
 
 app.get("/pascal", function (req, res){
     res.render("pascal.html");
