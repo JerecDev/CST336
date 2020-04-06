@@ -14,6 +14,9 @@ app.get("/pascal", function (req, res){
     res.render("pascal.html");
 });
 
+app.get("/java", function (req, res){
+    res.render("java.html");
+});
 
 //starting server
 app.listen(process.env.PORT, process.env.IP, function(){
