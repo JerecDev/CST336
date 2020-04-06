@@ -13,6 +13,10 @@ app.get("/index", function (req, res){
     res.render("index.html");
 });
 
+app.get("/c++", function (req, res){
+    res.render("c++.html");
+});
+
 app.get("/pascal", function (req, res){
     res.render("pascal.html");
 });
