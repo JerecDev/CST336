@@ -6,7 +6,7 @@ app.use(express.static("public"));
 
 //routes
 app.get("/", function (req, res){
-    res.render("index");
+    res.render("pascal");
 }); //root route
 
 
