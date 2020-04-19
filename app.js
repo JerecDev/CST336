@@ -9,10 +9,10 @@ app.set('view engine', 'ejs');
 
 /* Configure MySQL DBMS */
 const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'admin',
-    password: 'password',
-    database: 'quotes_db'
+    host: 'un0jueuv2mam78uv.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+    user: 'q6q44wuf2z8f65zz',
+    password: 'fmh7o3q9jk3wriax',
+    database: '	mbqmwkkrbeezul1c'
 });
 connection.connect();
 
@@ -58,6 +58,6 @@ app.get('*', function(req, res){
 });
 
 /* Start the application server */
-app.listen(process.env.PORT || 3000, function(){
+app.listen(process.env.PORT || 3306, function(){
     console.log('Server has been started');
 })
