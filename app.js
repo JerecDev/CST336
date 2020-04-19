@@ -67,7 +67,7 @@ app.get('/author/:aid', function(req, res){
 app.get('/gender', function(req, res){
     var stmt = 'select quote, firstName, lastName ' +
                'from l9_quotes, l9_author ' +
-               'where sex=\'' + req.query.gender + '\';';
+               'where sex=\'%' + req.query.gender + '%\';';
     connection.query(stmt, function(error, results){
         if(error) throw error;
         var name = results[0].firstName + ' ' + results[0].lastName;
