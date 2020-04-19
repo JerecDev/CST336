@@ -12,7 +12,7 @@ const connection = mysql.createConnection({
     host: 'un0jueuv2mam78uv.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
     user: 'q6q44wuf2z8f65zz',
     password: 'fmh7o3q9jk3wriax',
-    database: '	mbqmwkkrbeezul1c'
+    database: 'mbqmwkkrbeezul1c'
 });
 connection.connect();
 
