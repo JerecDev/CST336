@@ -18,8 +18,19 @@ connection.connect();
 
 /* The handler for the DEFAULT route */
 app.get('/', function(req, res){
-    res.render('home');
+  var blah = 'select country from l9_author';
+    connection.query(blah, function(error, results) {
+        if(error) throw error;
+        var arr = [];
+        results.forEach(function(r) {
+            if (!arr.includes(r.country)) {
+                arr.push(r.country);
+            }
+        });
+        res.render('home', {countries: arr});
+    });
 });
+
 
 /* The handler for the /author route */
 app.get('/author', function(req, res){
