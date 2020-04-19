@@ -65,8 +65,8 @@ app.get('/author/:aid', function(req, res){
 
 /* The handler for the /gender route */
 app.get('/gender', function(req, res){
-    var stmt = 'select quote, firstName, lastName ' +
-               'from l9_quotes, l9_author ' +
+	var stmt = 'select * ' +
+               'from l9_quotes natural join l9_author ' +
                'where sex=\'' + req.query.gender + '\';';
     connection.query(stmt, function(error, results){
         if(error) throw error;
@@ -74,6 +74,7 @@ app.get('/gender', function(req, res){
         res.render('quotes', {name: name, quotes: results});      
     });
 });
+
 
 /* The handler for the /keyword route */
 app.get('/keyword', function(req, res){
@@ -88,7 +89,7 @@ app.get('/keyword', function(req, res){
     });
 });
 
-/* the handler for the /country route */
+/* The handler for the /country route */
 app.get('/country', function(req, res){
     var stmt = 'select quote, firstName, lastName ' +
                'from l9_quotes, l9_author ' +
