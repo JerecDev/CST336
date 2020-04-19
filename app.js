@@ -63,6 +63,47 @@ app.get('/author/:aid', function(req, res){
     });
 });
 
+/* The handler for the /gender route */
+app.get('/gender', function(req, res){
+    var stmt = 'select quote, firstName, lastName ' +
+               'from l9_quotes, l9_author ' +
+               'where sex=\'' + req.query.gender + '\';';
+    connection.query(stmt, function(error, results){
+        if(error) throw error;
+        var name = results[0].firstName + ' ' + results[0].lastName;
+        res.render('quotes', {name: name, quotes: results});      
+    });
+});
+
+/* The handler for the /keyword route */
+app.get('/keyword', function(req, res){
+    var stmt = 'select quote, firstName, lastName ' +
+               'from l9_quotes, l9_author ' +
+               'where l9_quotes.authorId=l9_author.authorId ' + 
+               'and quote like\'%' + req.query.keyword + '%\';';
+    connection.query(stmt, function(error, results){
+        if(error) throw error;
+        var name = results[0].firstName + ' ' + results[0].lastName;
+        res.render('quotes', {name: name, quotes: results});      
+    });
+});
+
+/* the handler for the /country route */
+app.get('/country', function(req, res){
+    var stmt = 'select quote, firstName, lastName ' +
+               'from l9_quotes, l9_author ' +
+               'where l9_quotes.authorId=l9_author.authorId ' + 
+               'and country=\'' + req.query.country + '\';';
+    connection.query(stmt, function(error, results){
+        if(error) throw error;
+        var name = results[0].firstName + ' ' + results[0].lastName;
+        res.render('quotes', {name: name, quotes: results});      
+    });
+});
+
+
+
+
 /* The handler for undefined routes */
 app.get('*', function(req, res){
    res.render('error'); 
