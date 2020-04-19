@@ -1,5 +1,5 @@
 {
-  "name": "project4",
+  "name": "lab9",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -7,6 +7,8 @@
     "body-parser": "^1.19.0",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
+    "heroku": "^7.39.3",
+    "mysql": "^2.18.1",
     "request": "^2.88.0"
   },
   "devDependencies": {},
