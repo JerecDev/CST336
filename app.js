@@ -18,16 +18,16 @@ connection.connect();
 
 /* The handler for the DEFAULT route */
 app.get('/', function(req, res){
-  var blah = 'select country from l9_author';
-    connection.query(blah, function(error, results) {
+  var cats = 'select category from l9_author';
+    connection.query(cats, function(error, results) {
         if(error) throw error;
         var arr = [];
         results.forEach(function(r) {
-            if (!arr.includes(r.country)) {
-                arr.push(r.country);
+            if (!arr.includes(r.category)) {
+                arr.push(r.category);
             }
         });
-        res.render('home', {countries: arr});
+        res.render('home', {categories: arr});
     });
 });
 
@@ -89,12 +89,12 @@ app.get('/keyword', function(req, res){
     });
 });
 
-/* The handler for the /country route */
-app.get('/country', function(req, res){
+/* The handler for the /category route */
+app.get('/category', function(req, res){
     var stmt = 'select quote, firstName, lastName ' +
                'from l9_quotes, l9_author ' +
                'where l9_quotes.authorId=l9_author.authorId ' + 
-               'and country=\'' + req.query.country + '\';';
+               'and category=\'' + req.query.category + '\';';
     connection.query(stmt, function(error, results){
         if(error) throw error;
         var name = results[0].firstName + ' ' + results[0].lastName;

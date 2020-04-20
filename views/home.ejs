@@ -60,13 +60,13 @@
 			</div>
 		</form>
 		<br>
-		<form action='/country' method='GET'>
+		<form action='/category' method='GET'>
 			<div class='form-group row'>
-				<label for='country' class='col-sm-4 col-form-label'>Country</label>
+				<label for='category' class='col-sm-4 col-form-label'>Category</label>
 				<div class='col-sm-4'>
-					<select id="country" name="country">
-						<%countries.forEach(function(country){%>
-				            <option id="country" name ="country" value='<%=country%>'><%=country%></option>
+					<select id="category" name="category">
+						<%categories.forEach(function(category){%>
+				            <option id="category" name ="category" value='<%=category%>'><%=category%></option>
 				        <%});%>
 					</select>
 				</div>
@@ -74,7 +74,7 @@
 			<div class='form-group row'>
 				<div class='col-sm-4'></div>
 				<div class='col-sm-4'>
-					<button class='btn btn-primary btn-block'>Search Country</button>
+					<button class='btn btn-primary btn-block'>Search Category</button>
 				</div>
 				<div class='col-sm-4'></div>
 			</div>
