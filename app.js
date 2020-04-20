@@ -24,7 +24,7 @@ app.get('/', function(req, res){
     	if(error) throw error;
 		if(found.length){
 			found.forEach(function(f){
-				categories.push(f.category);
+				arr.push(f.category);
 			})
 		}
         res.render('home', {categories: arr});
