@@ -21,7 +21,7 @@ app.get('/', function(req, res){
   var cats = "select distinct(l9_quotes.category) from l9_quotes";
   var names = "select * from l9_author"
 	var arr = [];
-	connection.query(stmtCategory,function(error,found){
+	connection.query(cats,function(error,found){
     	if(error) throw error;
 		if(found.length){
 			found.forEach(function(f){
