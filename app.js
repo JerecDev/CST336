@@ -20,17 +20,16 @@ connection.connect();
 app.get('/', function(req, res){
   var cats = "select distinct(l9_quotes.category) from l9_quotes";
   var names = "select * from l9_author"
-    connection.query(names, function(error, results) {
-        if(error) throw error;
-        var arr = [];
-        results.forEach(function(r) {
-            if (!arr.includes(r.category)) {
-                arr.push(r.category);
-            }
-        });
+	var arr = [];
+	connection.query(stmtCategory,function(error,found){
+    	if(error) throw error;
+		if(found.length){
+			found.forEach(function(f){
+				categories.push(f.category);
+			})
+		}
         res.render('home', {categories: arr});
     });
-});
 
 
 /* The handler for the /author route */
