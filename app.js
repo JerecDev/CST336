@@ -18,17 +18,20 @@ connection.connect();
 
 /* The handler for the DEFAULT route */
 app.get('/', function(req, res){
-  var cats = "select distinct(l9_quotes.category) from l9_quotes;";
+    
+    var cats = "select distinct(l9_quotes.category) from l9_quotes;";
 	var arr = [];
+	
 	connection.query(cats,function(error,found){
     	if(error) throw error;
-		if(found.length){
-			found.forEach(function(f){
-				arr.push(f.category);
-			})
-		}
-        res.render('home', {categories: arr});
+		    if(found.length){
+			    found.forEach(function(f){
+				    arr.push(f.category);
+			    })
+            res.render('home', {categories: arr});
+	    }
     });
+});
 
 
 /* The handler for the /author route */
@@ -88,6 +91,7 @@ app.get('/keyword', function(req, res){
     });
 });
 
+
 /* The handler for the /category route */
 app.get('/category', function(req, res){
     var stmt = 'select quote, firstName, lastName ' +
@@ -112,4 +116,4 @@ app.get('*', function(req, res){
 /* Start the application server */
 app.listen(process.env.PORT || 3306, function(){
     console.log('Server has been started');
-})
+});
