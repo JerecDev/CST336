@@ -55,19 +55,23 @@ app.post("/login", async function(req, res){
     let passwordMatch = await checkPassword(password, hashedPwd);
     if (username == 'admin' && password == 'password') {
         req.session.authenticated = true;
-        res.render("/");
+        res.redirect('/home');
     } else {
         res.render("login", {"loginError":true});
     }
 });
 
-app.get("/adminPage", function(req, res){
-    if (req.session.authenticated) {
-        res.render("adminPage");
-    } else {
-        res.render("login");
-    }
+app.get("/adminPage", isAuthenticated, function(req, res){
+    res.render("adminPage");
 });
+
+function isAuthenticated(req, res, next) {
+    if (!req.session.authenticated) {
+        res.redirect('/login');
+    } else {
+        next();
+    }
+}
 
 function checkPassword(password, hashedValue) {
     return new Promise( function(resolve, reject) {
