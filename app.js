@@ -1,11 +1,19 @@
 /* Require external APIs and start our application instance */
 var express = require('express');
-var mysql = require('mysql');
 var app = express();
+var session = require('express-session');
+var bcrypt = require('bcrypt');
+var mysql = require('mysql');
 
 /* Configure our server to read public folder and ejs files */
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
+
+app.use(session({
+    secret: "top secret!",
+    resave: true,
+    saveUninitialized: true
+}));
 
 /* Configure MySQL DBMS */
 const connection = mysql.createConnection({
@@ -31,6 +39,10 @@ app.get('/', function(req, res){
             res.render('home', {categories: arr});
 	    }
     });
+});
+
+app.get('/login', function(req, res){
+   res.render('login'); 
 });
 
 
