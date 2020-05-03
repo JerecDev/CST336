@@ -50,7 +50,11 @@ app.get('/login', function(req, res){
 app.post("/login", function(req, res){
     let username = req.body.username;
     let password = req.body.password;
-   res.send("This is the root route using POST!" + username + password); 
+    if (username == 'admin' && password == 'secret') {
+        res.send("GOOD JOB YOU DID IT!!!! XD")
+    } else {
+        res.render("login");
+    }
 });
 
 
