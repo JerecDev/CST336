@@ -72,7 +72,7 @@ app.get("/logout", function(req, res) {
 
 function isAuthenticated(req, res, next) {
     if (!req.session.authenticated) {
-        res.render("login");
+        res.redirect("/login");
     } else {
         next();
     }
