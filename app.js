@@ -65,9 +65,14 @@ app.get("/adminPage", isAuthenticated, function(req, res){
     res.render("adminPage");
 });
 
+app.get("/logout", function(req, res) {
+    req.session.destroy();
+    res.redirect("/");
+});
+
 function isAuthenticated(req, res, next) {
     if (!req.session.authenticated) {
-        res.redirect('/login');
+        res.render("login");
     } else {
         next();
     }
