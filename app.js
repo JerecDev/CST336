@@ -53,17 +53,25 @@ app.post("/login", async function(req, res){
     let hashedPwd = "$2a$10$06ofFgXJ9wysAOzQh0D0..RcDp1w/urY3qhO6VuUJL2c6tzAJPfj6";
     
     let passwordMatch = await checkPassword(password, hashedPwd);
-    if (username == 'admin' && password == 'password') {
-        res.send("noice m8")
+    if (username == 'admin' && passwordMatch) {
+        req.session.authenticated = true;
+        res.send("noice m8");
     } else {
         res.render("login", {"loginError":true});
+    }
+});
+
+app.get("/adminPage", function(req, res){
+    if (req.session.authenticated) {
+        res.render("adminPage");
+    } else {
+        res.render("login");
     }
 });
 
 function checkPassword(password, hashedValue) {
     return new Promise( function(resolve, reject) {
         bcrypt.compare(password, hashedValue, function(err, result) {
-            console.log("Result: " + result);
             resolve(result);
         });
     });
