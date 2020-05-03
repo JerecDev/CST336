@@ -53,9 +53,9 @@ app.post("/login", async function(req, res){
     let hashedPwd = "$2a$10$06ofFgXJ9wysAOzQh0D0..RcDp1w/urY3qhO6VuUJL2c6tzAJPfj6";
     
     let passwordMatch = await checkPassword(password, hashedPwd);
-    if (username == 'admin' && passwordMatch) {
+    if (username == 'admin' && password == 'password') {
         req.session.authenticated = true;
-        res.send("noice m8");
+        res.render("/");
     } else {
         res.render("login", {"loginError":true});
     }
