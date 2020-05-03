@@ -3,8 +3,10 @@
 <div class='container'>
 	<div class='jumbotron'>
 		<h1> POPULAR QUOTES </h1><br>
-		<button type="submit" class="btn btn-success" onclick='/login'>Admin Login</button>
-		
+		<form action="/login" method = "GET">
+          <button>Admin Login</button>
+        </form>
+		<br>
 		<form action='/author' method='GET'>
 			<div class='form-group row'>
 				<label for='firstname' class='col-sm-4 col-form-label'>First Name</label>
