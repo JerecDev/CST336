@@ -55,7 +55,7 @@ app.post("/login", async function(req, res){
     let passwordMatch = await checkPassword(password, hashedPwd);
     if (username == 'admin' && password == 'password') {
         req.session.authenticated = true;
-        res.redirect('/home');
+        res.render('/home');
     } else {
         res.render("login", {"loginError":true});
     }
