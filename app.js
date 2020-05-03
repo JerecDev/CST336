@@ -45,6 +45,10 @@ app.get('/login', function(req, res){
    res.render('login'); 
 });
 
+app.post("/login", function(req, res){
+   res.send("This is the root route using POST!"); 
+});
+
 
 /* The handler for the /author route */
 app.get('/author', function(req, res){
