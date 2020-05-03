@@ -15,6 +15,8 @@ app.use(session({
     saveUninitialized: true
 }));
 
+app.use(express.urlencoded({extended: true}));
+
 /* Configure MySQL DBMS */
 const connection = mysql.createConnection({
     host: 'un0jueuv2mam78uv.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
@@ -46,6 +48,10 @@ app.get('/login', function(req, res){
 });
 
 app.post("/login", function(req, res){
+    let username = req.body.username;
+    let password = req.body.password;
+    console.log("username: " + username);
+    console.log("password: " + password);
    res.send("This is the root route using POST!"); 
 });
 
