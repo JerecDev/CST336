@@ -53,7 +53,7 @@ app.post("/login", function(req, res){
     if (username == 'admin' && password == 'secret') {
         res.send("GOOD JOB YOU DID IT!!!! XD")
     } else {
-        res.render("login");
+        res.render("login", {"loginError":true});
     }
 });
 
